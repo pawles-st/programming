@@ -1,0 +1,122 @@
+\hypertarget{structNode}{}\doxysection{Node\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structNode}\index{Node$<$ T $>$@{Node$<$ T $>$}}
+
+
+{\ttfamily \#include $<$binary\+\_\+tree.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNode_aa42d508d2b6c52eab9728d27d8357cdc}{Node}} (T item)
+\item 
+\mbox{\hyperlink{structNode_ae3d16de57a65df77a42b8e1515f70383}{$\sim$\+Node}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}}
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}}
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}}
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{structNode_a6eb3b661ef0b58d46dfe228c6ea2e20b}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct Node$<$ T $>$}
+Struct whose objects serve as elements of the tree \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structNode_aa42d508d2b6c52eab9728d27d8357cdc}\label{structNode_aa42d508d2b6c52eab9728d27d8357cdc}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$\mbox{\hyperlink{structNode}{\+::\+Node}} (\begin{DoxyParamCaption}\item[{T}]{item }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em item} & the value of the node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028 : \mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}}(item), \mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}}(\textcolor{keyword}{nullptr}), \mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}}(\textcolor{keyword}{nullptr}), \mbox{\hyperlink{structNode_a6eb3b661ef0b58d46dfe228c6ea2e20b}{parent}}(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structNode_ae3d16de57a65df77a42b8e1515f70383}\label{structNode_ae3d16de57a65df77a42b8e1515f70383}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!````~Node@{$\sim$Node}}
+\index{````~Node@{$\sim$Node}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Node()}{~Node()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Destructor 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structNode_a9d5e5c1914f5ed67389740354a607527}\label{structNode_a9d5e5c1914f5ed67389740354a607527}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!key@{key}}
+\index{key@{key}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::key}
+
+Value of the node 
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{structNode_a2841886a16c27e72b21885025c00b44b}\label{structNode_a2841886a16c27e72b21885025c00b44b}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!left@{left}}
+\index{left@{left}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$T$>$$\ast$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::left}
+
+Pointer to the left child 
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{structNode_a6eb3b661ef0b58d46dfe228c6ea2e20b}\label{structNode_a6eb3b661ef0b58d46dfe228c6ea2e20b}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!parent@{parent}}
+\index{parent@{parent}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$T$>$$\ast$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::parent}
+
+Pointer to the parent 
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{structNode_ad7092450d89448320103cde1f72da320}\label{structNode_ad7092450d89448320103cde1f72da320}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!right@{right}}
+\index{right@{right}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$T$>$$\ast$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::right}
+
+Pointer to the right child 
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{binary__tree_8hpp}{binary\+\_\+tree.\+hpp}}\end{DoxyCompactItemize}

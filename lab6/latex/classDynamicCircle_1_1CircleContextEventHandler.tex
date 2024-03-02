@@ -1,0 +1,101 @@
+\hypertarget{classDynamicCircle_1_1CircleContextEventHandler}{}\doxysection{Dynamic\+Circle.\+Circle\+Context\+Event\+Handler Class Reference}
+\label{classDynamicCircle_1_1CircleContextEventHandler}\index{DynamicCircle.CircleContextEventHandler@{DynamicCircle.CircleContextEventHandler}}
+Inheritance diagram for Dynamic\+Circle.\+Circle\+Context\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicCircle_1_1CircleContextEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler_af728c75b166919b253d4a0a6171ebc58}{handle}} (Context\+Menu\+Event cme)
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler_a9d4cb4b5fff92cfbaaeb37756f9106ef}{Circle\+Context\+Event\+Handler}} (Context\+Menu \mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler_a57f0fbb710a6e61ee2ad6748186e033b}{shape\+Menu}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Context\+Menu \mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler_a57f0fbb710a6e61ee2ad6748186e033b}{shape\+Menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with showing the context menu on the circle 
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00101}{101}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamicCircle_1_1CircleContextEventHandler_a9d4cb4b5fff92cfbaaeb37756f9106ef}\label{classDynamicCircle_1_1CircleContextEventHandler_a9d4cb4b5fff92cfbaaeb37756f9106ef}} 
+\index{DynamicCircle.CircleContextEventHandler@{DynamicCircle.CircleContextEventHandler}!CircleContextEventHandler@{CircleContextEventHandler}}
+\index{CircleContextEventHandler@{CircleContextEventHandler}!DynamicCircle.CircleContextEventHandler@{DynamicCircle.CircleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{CircleContextEventHandler()}{CircleContextEventHandler()}}
+{\footnotesize\ttfamily Dynamic\+Circle.\+Circle\+Context\+Event\+Handler.\+Circle\+Context\+Event\+Handler (\begin{DoxyParamCaption}\item[{Context\+Menu}]{shape\+Menu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em shape\+Menu} & The context menu to show \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00107}{107}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107                                                          \{}
+\DoxyCodeLine{00108             this.\mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler_a57f0fbb710a6e61ee2ad6748186e033b}{shapeMenu}} = \mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler_a57f0fbb710a6e61ee2ad6748186e033b}{shapeMenu}};}
+\DoxyCodeLine{00109         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicCircle_1_1CircleContextEventHandler_af728c75b166919b253d4a0a6171ebc58}\label{classDynamicCircle_1_1CircleContextEventHandler_af728c75b166919b253d4a0a6171ebc58}} 
+\index{DynamicCircle.CircleContextEventHandler@{DynamicCircle.CircleContextEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicCircle.CircleContextEventHandler@{DynamicCircle.CircleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Circle.\+Circle\+Context\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Context\+Menu\+Event}]{cme }\end{DoxyParamCaption})}
+
+Method that deals with the context menu event 
+\begin{DoxyParams}{Parameters}
+{\em cme} & Event that caused the context menu popup \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00114}{114}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114                                                  \{}
+\DoxyCodeLine{00115             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} == \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{00116                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00117             \}}
+\DoxyCodeLine{00118             \mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler_a57f0fbb710a6e61ee2ad6748186e033b}{shapeMenu}}.show(\mbox{\hyperlink{classDynamicCircle}{DynamicCircle}}.this, cme.getScreenX(), cme.getScreenY());}
+\DoxyCodeLine{00119         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDynamicCircle_1_1CircleContextEventHandler_a57f0fbb710a6e61ee2ad6748186e033b}\label{classDynamicCircle_1_1CircleContextEventHandler_a57f0fbb710a6e61ee2ad6748186e033b}} 
+\index{DynamicCircle.CircleContextEventHandler@{DynamicCircle.CircleContextEventHandler}!shapeMenu@{shapeMenu}}
+\index{shapeMenu@{shapeMenu}!DynamicCircle.CircleContextEventHandler@{DynamicCircle.CircleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{shapeMenu}{shapeMenu}}
+{\footnotesize\ttfamily Context\+Menu Dynamic\+Circle.\+Circle\+Context\+Event\+Handler.\+shape\+Menu\hspace{0.3cm}{\ttfamily [package]}}
+
+Variable that holds the context menu 
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00103}{103}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicCircle_8java}{Dynamic\+Circle.\+java}}\end{DoxyCompactItemize}

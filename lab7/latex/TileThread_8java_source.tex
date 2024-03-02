@@ -1,0 +1,76 @@
+\hypertarget{TileThread_8java_source}{}\doxysection{Tile\+Thread.\+java}
+\mbox{\hyperlink{TileThread_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00001}00001 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00007}\mbox{\hyperlink{classTileThread}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{classTileThread}{TileThread}} \textcolor{keyword}{extends} Thread \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00009}\mbox{\hyperlink{classTileThread_aeb16430bf849e333363332beeca92741}{00009}}     \textcolor{keyword}{static} \textcolor{keyword}{private} \textcolor{keyword}{final} Object \mbox{\hyperlink{classTileThread_aeb16430bf849e333363332beeca92741}{synch}} = \textcolor{keyword}{new} Object();}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00011}\mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{00011}}     \textcolor{keyword}{static} \textcolor{keyword}{private} \textcolor{keywordtype}{double} \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00013}\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{00013}}     \textcolor{keyword}{static} \textcolor{keyword}{private} ArrayList<TileButton> \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00015}\mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{00015}}     \textcolor{keyword}{static} \textcolor{keyword}{private} \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00017}\mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{00017}}     \textcolor{keyword}{static} \textcolor{keyword}{private} \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00019}\mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{00019}}     \textcolor{keyword}{private} \mbox{\hyperlink{classTileButton}{TileButton}} \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00021}\mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{00021}}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00023}\mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{00023}}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00029}\mbox{\hyperlink{classTileThread_a2082996b4b3d0cb17f75490aa657bfd5}{00029}}     \textcolor{keyword}{public} \mbox{\hyperlink{classTileThread_a2082996b4b3d0cb17f75490aa657bfd5}{TileThread}}(\mbox{\hyperlink{classTileButton}{TileButton}} \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}}) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00030}00030         this.tile = \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00031}00031         this.x = \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00032}00032         this.y = \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00040}\mbox{\hyperlink{classTileThread_a2366c47201bbf9df73a5d826ac91bfb3}{00040}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classTileThread_a2366c47201bbf9df73a5d826ac91bfb3}{initValues}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}}, ArrayList<TileButton> \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}}) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00041}00041         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}} = \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00042}00042         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}} = \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00043}00043         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}} = \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00044}00044         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}} = \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00047}\mbox{\hyperlink{classTileThread_a3291dad3691c3f3f5d9125c3bdf04956}{00047}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{classTileThread_a3291dad3691c3f3f5d9125c3bdf04956}{change}}() \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00048}00048         \textcolor{keyword}{synchronized} (\mbox{\hyperlink{classTileThread_aeb16430bf849e333363332beeca92741}{synch}}) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00049}00049             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a4a4608c0ffa8f1f7e859ffc3646eef31}{getState}}()) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00050}00050                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_ad8e17cbbc05a149e98f541f5c223ea1d}{randomProbability}}() <= \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}}) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00051}00051                     \textcolor{keyword}{final} \textcolor{keywordtype}{double} newHue = \mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_a3bd488d2c6e575a211819d61cadc176c}{randomHue}}();}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00052}00052                     \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a10dce7129f2cb518fa4886340a25a736}{changeBackground}}(newHue);}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00053}00053                     \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a07736d501f0bbc4d71af056ce15c053e}{setHue}}(newHue);}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00054}00054                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00055}00055                     \textcolor{keywordtype}{double} newHue = 0;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00056}00056                     \textcolor{keywordtype}{int} active\_neighbours = 0;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00057}00057                     \textcolor{keywordtype}{int} up = \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}}*\mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}} + Math.floorMod(\mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} -\/ 1, \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}});}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00058}00058                     \textcolor{keywordtype}{int} down = \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}}*\mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}} + Math.floorMod(\mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} + 1, \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}});}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00059}00059                     \textcolor{keywordtype}{int} right = \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} + \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}}*Math.floorMod(\mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}} + 1, \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}});}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00060}00060                     \textcolor{keywordtype}{int} left = \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} + \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}}*Math.floorMod(\mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}} -\/ 1, \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}});}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00061}00061                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(up).getState()) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00062}00062                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(up).getHue();}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00063}00063                         ++active\_neighbours;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00064}00064                     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00065}00065                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(down).getState()) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00066}00066                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(down).getHue();}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00067}00067                         ++active\_neighbours;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00068}00068                     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00069}00069                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(right).getState()) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00070}00070                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(right).getHue();}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00071}00071                         ++active\_neighbours;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00072}00072                     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00073}00073                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(left).getState()) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00074}00074                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(left).getHue();}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00075}00075                         ++active\_neighbours;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00076}00076                     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00077}00077                     \textcolor{keywordflow}{if} (active\_neighbours != 0) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00078}00078                         newHue /= active\_neighbours;}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00079}00079                         \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a10dce7129f2cb518fa4886340a25a736}{changeBackground}}(newHue);}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00080}00080                         \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a07736d501f0bbc4d71af056ce15c053e}{setHue}}(newHue);}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00081}00081                     \};}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00082}00082                 \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00083}00083             \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00084}00084         \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00087}00087     @Override}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00088}\mbox{\hyperlink{classTileThread_a8fd9f094039c6b3c2ff0c8fa3701d6ad}{00088}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classTileThread_a8fd9f094039c6b3c2ff0c8fa3701d6ad}{run}}() \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00089}00089         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00090}00090             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00091}00091                 sleep(\mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_a9486cf43ea9add2f25ceda793133dc7b}{randomDelay}}());}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00092}00092                 \mbox{\hyperlink{classTileThread_a3291dad3691c3f3f5d9125c3bdf04956}{change}}();}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00093}00093             \} \textcolor{keywordflow}{catch} (InterruptedException ie)\{\}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00094}00094         \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00095}00095     \}}
+\DoxyCodeLine{\Hypertarget{TileThread_8java_source_l00096}00096 \}}
+
+\end{DoxyCode}

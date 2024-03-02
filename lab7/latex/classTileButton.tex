@@ -1,0 +1,189 @@
+\hypertarget{classTileButton}{}\doxysection{Tile\+Button Class Reference}
+\label{classTileButton}\index{TileButton@{TileButton}}
+
+
+Inheritance diagram for Tile\+Button\+:
+% FIG 0
+
+
+Collaboration diagram for Tile\+Button\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTileButton_a090e7a7241f03ff1feca4b1213af3573}{Tile\+Button}} ()
+\item 
+void \mbox{\hyperlink{classTileButton_a10dce7129f2cb518fa4886340a25a736}{change\+Background}} (double \mbox{\hyperlink{classTileButton_a7b65c8034877fdeda3efe822ace40941}{hue}})
+\item 
+void \mbox{\hyperlink{classTileButton_a07736d501f0bbc4d71af056ce15c053e}{set\+Hue}} (double \mbox{\hyperlink{classTileButton_a7b65c8034877fdeda3efe822ace40941}{hue}})
+\item 
+double \mbox{\hyperlink{classTileButton_ae67d6a9ad791c9f34d22e4389985271d}{get\+Hue}} ()
+\item 
+boolean \mbox{\hyperlink{classTileButton_a4a4608c0ffa8f1f7e859ffc3646eef31}{get\+State}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classTileButton_a7b65c8034877fdeda3efe822ace40941}{hue}}
+\item 
+boolean \mbox{\hyperlink{classTileButton_aa8b0af43156aa1c598178414268017c3}{active}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that holds the Java\+FX properties of a single button tile \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00015}{15}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTileButton_a090e7a7241f03ff1feca4b1213af3573}\label{classTileButton_a090e7a7241f03ff1feca4b1213af3573}} 
+\index{TileButton@{TileButton}!TileButton@{TileButton}}
+\index{TileButton@{TileButton}!TileButton@{TileButton}}
+\doxysubsubsection{\texorpdfstring{TileButton()}{TileButton()}}
+{\footnotesize\ttfamily Tile\+Button.\+Tile\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The main constructor 
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00021}{21}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021                         \{}
+\DoxyCodeLine{00022         setOnAction(\textcolor{keyword}{new} EventHandler<ActionEvent>() \{}
+\DoxyCodeLine{00023             @Override}
+\DoxyCodeLine{00024             \textcolor{keyword}{public} \textcolor{keywordtype}{void} handle(ActionEvent ae) \{}
+\DoxyCodeLine{00025                 \mbox{\hyperlink{classTileButton_aa8b0af43156aa1c598178414268017c3}{active}} = (\mbox{\hyperlink{classTileButton_aa8b0af43156aa1c598178414268017c3}{active}} ? false : \textcolor{keyword}{true});}
+\DoxyCodeLine{00026             \}}
+\DoxyCodeLine{00027         \});}
+\DoxyCodeLine{00028         setMaxWidth(Double.POSITIVE\_INFINITY);}
+\DoxyCodeLine{00029         setMaxHeight(Double.POSITIVE\_INFINITY);}
+\DoxyCodeLine{00030         setMinWidth(Double.MIN\_VALUE);}
+\DoxyCodeLine{00031         setMinHeight(Double.MIN\_VALUE);}
+\DoxyCodeLine{00032     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTileButton_a10dce7129f2cb518fa4886340a25a736}\label{classTileButton_a10dce7129f2cb518fa4886340a25a736}} 
+\index{TileButton@{TileButton}!changeBackground@{changeBackground}}
+\index{changeBackground@{changeBackground}!TileButton@{TileButton}}
+\doxysubsubsection{\texorpdfstring{changeBackground()}{changeBackground()}}
+{\footnotesize\ttfamily void Tile\+Button.\+change\+Background (\begin{DoxyParamCaption}\item[{double}]{hue }\end{DoxyParamCaption})}
+
+Method for changing the background hue of the button 
+\begin{DoxyParams}{Parameters}
+{\em hue} & the hue to set the background to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00036}{36}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036                                              \{}
+\DoxyCodeLine{00037         Platform.runLater(() -\/> \{}
+\DoxyCodeLine{00038             setBackground(\textcolor{keyword}{new} Background(\textcolor{keyword}{new} BackgroundFill(Color.hsb(\mbox{\hyperlink{classTileButton_a7b65c8034877fdeda3efe822ace40941}{hue}}, 0.6, 1.0), CornerRadii.EMPTY, Insets.EMPTY)));}
+\DoxyCodeLine{00039         \});}
+\DoxyCodeLine{00040     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTileButton_ae67d6a9ad791c9f34d22e4389985271d}\label{classTileButton_ae67d6a9ad791c9f34d22e4389985271d}} 
+\index{TileButton@{TileButton}!getHue@{getHue}}
+\index{getHue@{getHue}!TileButton@{TileButton}}
+\doxysubsubsection{\texorpdfstring{getHue()}{getHue()}}
+{\footnotesize\ttfamily double Tile\+Button.\+get\+Hue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method for getting the value of the hue variable \begin{DoxyReturn}{Returns}
+double the value of the hue 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00050}{50}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050                            \{}
+\DoxyCodeLine{00051         \textcolor{keywordflow}{return} \mbox{\hyperlink{classTileButton_a7b65c8034877fdeda3efe822ace40941}{hue}};}
+\DoxyCodeLine{00052     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTileButton_a4a4608c0ffa8f1f7e859ffc3646eef31}\label{classTileButton_a4a4608c0ffa8f1f7e859ffc3646eef31}} 
+\index{TileButton@{TileButton}!getState@{getState}}
+\index{getState@{getState}!TileButton@{TileButton}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily boolean Tile\+Button.\+get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method for getting the current state of the tile \begin{DoxyReturn}{Returns}
+boolean whether the current tile is active or not 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00056}{56}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                                \{}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{return} \mbox{\hyperlink{classTileButton_aa8b0af43156aa1c598178414268017c3}{active}};}
+\DoxyCodeLine{00058      \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTileButton_a07736d501f0bbc4d71af056ce15c053e}\label{classTileButton_a07736d501f0bbc4d71af056ce15c053e}} 
+\index{TileButton@{TileButton}!setHue@{setHue}}
+\index{setHue@{setHue}!TileButton@{TileButton}}
+\doxysubsubsection{\texorpdfstring{setHue()}{setHue()}}
+{\footnotesize\ttfamily void Tile\+Button.\+set\+Hue (\begin{DoxyParamCaption}\item[{double}]{hue }\end{DoxyParamCaption})}
+
+Method for setting the value of the hue variable 
+\begin{DoxyParams}{Parameters}
+{\em hue} & the value of the hue \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00044}{44}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044                                    \{}
+\DoxyCodeLine{00045         this.\mbox{\hyperlink{classTileButton_a7b65c8034877fdeda3efe822ace40941}{hue}} = \mbox{\hyperlink{classTileButton_a7b65c8034877fdeda3efe822ace40941}{hue}};}
+\DoxyCodeLine{00046     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTileButton_aa8b0af43156aa1c598178414268017c3}\label{classTileButton_aa8b0af43156aa1c598178414268017c3}} 
+\index{TileButton@{TileButton}!active@{active}}
+\index{active@{active}!TileButton@{TileButton}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily boolean Tile\+Button.\+active = true\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that holds whether the current tile is active 
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00019}{19}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+\mbox{\Hypertarget{classTileButton_a7b65c8034877fdeda3efe822ace40941}\label{classTileButton_a7b65c8034877fdeda3efe822ace40941}} 
+\index{TileButton@{TileButton}!hue@{hue}}
+\index{hue@{hue}!TileButton@{TileButton}}
+\doxysubsubsection{\texorpdfstring{hue}{hue}}
+{\footnotesize\ttfamily double Tile\+Button.\+hue\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that stores the current hue of the button 
+
+Definition at line \mbox{\hyperlink{TileButton_8java_source_l00017}{17}} of file \mbox{\hyperlink{TileButton_8java_source}{Tile\+Button.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TileButton_8java}{Tile\+Button.\+java}}\end{DoxyCompactItemize}

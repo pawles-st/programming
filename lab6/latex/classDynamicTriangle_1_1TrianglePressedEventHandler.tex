@@ -1,0 +1,64 @@
+\hypertarget{classDynamicTriangle_1_1TrianglePressedEventHandler}{}\doxysection{Dynamic\+Triangle.\+Triangle\+Pressed\+Event\+Handler Class Reference}
+\label{classDynamicTriangle_1_1TrianglePressedEventHandler}\index{DynamicTriangle.TrianglePressedEventHandler@{DynamicTriangle.TrianglePressedEventHandler}}
+Inheritance diagram for Dynamic\+Triangle.\+Triangle\+Pressed\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicTriangle_1_1TrianglePressedEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicTriangle_1_1TrianglePressedEventHandler_aa73b716fdae445d432d6bcb13c9cdf13}{handle}} (Mouse\+Event me)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with pressing on the triangle 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00053}{53}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_1_1TrianglePressedEventHandler_aa73b716fdae445d432d6bcb13c9cdf13}\label{classDynamicTriangle_1_1TrianglePressedEventHandler_aa73b716fdae445d432d6bcb13c9cdf13}} 
+\index{DynamicTriangle.TrianglePressedEventHandler@{DynamicTriangle.TrianglePressedEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicTriangle.TrianglePressedEventHandler@{DynamicTriangle.TrianglePressedEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Triangle.\+Triangle\+Pressed\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{me }\end{DoxyParamCaption})}
+
+Method that deals with the pressing event 
+\begin{DoxyParams}{Parameters}
+{\em me} & Event that caused the pressing event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00058}{58}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058                                           \{}
+\DoxyCodeLine{00059             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} == \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{00060                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00061             \}}
+\DoxyCodeLine{00062             Point2D pointHit = \textcolor{keyword}{new} Point2D(me.getX(), me.getY());}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classDynamicTriangle_a540cd1e2e2e00c980b27f29b17d1293b}{isSelected}}) \{}
+\DoxyCodeLine{00064                 \mbox{\hyperlink{classDynamicTriangle_a540cd1e2e2e00c980b27f29b17d1293b}{isSelected}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00065                 setStroke(Color.BLACK);}
+\DoxyCodeLine{00066                 setStrokeWidth(1.0);}
+\DoxyCodeLine{00067             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00068                 \mbox{\hyperlink{classDynamicTriangle_af91f961a4038c6f15aee0bb722c6b1e8}{pressX}} = me.getX() + 100;}
+\DoxyCodeLine{00069                 \mbox{\hyperlink{classDynamicTriangle_a7e499fd7c452dfa621e5c80e8bd817f8}{pressY}} = me.getY() + 20;}
+\DoxyCodeLine{00070                 \mbox{\hyperlink{classDynamicTriangle_a540cd1e2e2e00c980b27f29b17d1293b}{isSelected}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00071                 setStroke(Color.YELLOW);}
+\DoxyCodeLine{00072                 setStrokeWidth(2.5);}
+\DoxyCodeLine{00073             \}}
+\DoxyCodeLine{00074         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicTriangle_8java}{Dynamic\+Triangle.\+java}}\end{DoxyCompactItemize}

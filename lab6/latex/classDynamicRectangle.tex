@@ -1,0 +1,105 @@
+\hypertarget{classDynamicRectangle}{}\doxysection{Dynamic\+Rectangle Class Reference}
+\label{classDynamicRectangle}\index{DynamicRectangle@{DynamicRectangle}}
+Inheritance diagram for Dynamic\+Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicRectangle}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler}{Rectangle\+Context\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicRectangle_1_1RectangleDraggedEventHandler}{Rectangle\+Dragged\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicRectangle_1_1RectanglePressedEventHandler}{Rectangle\+Pressed\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicRectangle_1_1RectangleRotateEventHandler}{Rectangle\+Rotate\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicRectangle_1_1RectangleScrolledEventHandler}{Rectangle\+Scrolled\+Event\+Handler}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicRectangle_a3dcef2bd0c90725fa4177f07e95e64fc}{Dynamic\+Rectangle}} (Point2D p1, Point2D p2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classDynamicRectangle_adfd4bb7d3dde8aa221493c03e13bfdf2}{is\+Selected}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class for the rectangle draw \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00020}{20}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_a3dcef2bd0c90725fa4177f07e95e64fc}\label{classDynamicRectangle_a3dcef2bd0c90725fa4177f07e95e64fc}} 
+\index{DynamicRectangle@{DynamicRectangle}!DynamicRectangle@{DynamicRectangle}}
+\index{DynamicRectangle@{DynamicRectangle}!DynamicRectangle@{DynamicRectangle}}
+\doxysubsubsection{\texorpdfstring{DynamicRectangle()}{DynamicRectangle()}}
+{\footnotesize\ttfamily Dynamic\+Rectangle.\+Dynamic\+Rectangle (\begin{DoxyParamCaption}\item[{Point2D}]{p1,  }\item[{Point2D}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em p1} & Starting point \\
+\hline
+{\em p2} & Point determining the diagonal line \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00027}{27}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027                                              \{}
+\DoxyCodeLine{00028         super(Math.min(p1.getX(), p2.getX()), Math.min(p1.getY(), p2.getY()), Math.abs(p1.getX() -\/ p2.getX()), Math.abs(p1.getY() -\/ p2.getY()));}
+\DoxyCodeLine{00029         setOnMousePressed(\textcolor{keyword}{new} RectanglePressedEventHandler());}
+\DoxyCodeLine{00030         setOnMouseDragged(\textcolor{keyword}{new} RectangleDraggedEventHandler());}
+\DoxyCodeLine{00031         setOnScroll(\textcolor{keyword}{new} RectangleScrolledEventHandler());}
+\DoxyCodeLine{00032         ContextMenu shapeMenu = \textcolor{keyword}{new} ContextMenu();}
+\DoxyCodeLine{00033         ColorPicker shapeFill = \textcolor{keyword}{new} ColorPicker();}
+\DoxyCodeLine{00034         MenuItem fillItem = \textcolor{keyword}{new} MenuItem(\textcolor{keyword}{null}, shapeFill);}
+\DoxyCodeLine{00035         fillItem.setOnAction(\textcolor{keyword}{new} EventHandler<ActionEvent>() \{}
+\DoxyCodeLine{00036             @Override}
+\DoxyCodeLine{00037             \textcolor{keyword}{public} \textcolor{keywordtype}{void} handle(ActionEvent ae) \{}
+\DoxyCodeLine{00038                 setFill(shapeFill.getValue());}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040         \});}
+\DoxyCodeLine{00041         setOnContextMenuRequested(\textcolor{keyword}{new} RectangleContextEventHandler(shapeMenu));}
+\DoxyCodeLine{00042         MenuItem rotateItem = \textcolor{keyword}{new} MenuItem(\textcolor{stringliteral}{"{}Rotate"{}});}
+\DoxyCodeLine{00043         rotateItem.setOnAction(\textcolor{keyword}{new} RectangleRotateEventHandler());}
+\DoxyCodeLine{00044         shapeMenu.getItems().addAll(fillItem, rotateItem);}
+\DoxyCodeLine{00045     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_adfd4bb7d3dde8aa221493c03e13bfdf2}\label{classDynamicRectangle_adfd4bb7d3dde8aa221493c03e13bfdf2}} 
+\index{DynamicRectangle@{DynamicRectangle}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!DynamicRectangle@{DynamicRectangle}}
+\doxysubsubsection{\texorpdfstring{isSelected}{isSelected}}
+{\footnotesize\ttfamily boolean Dynamic\+Rectangle.\+is\+Selected = false\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that stores whether the shape is currently selected 
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00022}{22}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicRectangle_8java}{Dynamic\+Rectangle.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,22 @@
+\hypertarget{MenuHelpEventHandler_8java_source}{}\doxysection{Menu\+Help\+Event\+Handler.\+java}
+\mbox{\hyperlink{MenuHelpEventHandler_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00001}00001 \textcolor{keyword}{import} javafx.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00002}00002 \textcolor{keyword}{import} javafx.event.EventHandler;}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00003}00003 \textcolor{keyword}{import} javafx.scene.control.Dialog;}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00009}\mbox{\hyperlink{classMenuHelpEventHandler}{00009}} \textcolor{keyword}{class }\mbox{\hyperlink{classMenuHelpEventHandler}{MenuHelpEventHandler}} \textcolor{keyword}{implements} EventHandler<ActionEvent> \{}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00011}\mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{00011}}     \textcolor{keyword}{private} Dialog<String> \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}};}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00015}\mbox{\hyperlink{classMenuHelpEventHandler_aa6b6ad56f204d89e154133d0c93cd548}{00015}}     \textcolor{keyword}{public} \mbox{\hyperlink{classMenuHelpEventHandler_aa6b6ad56f204d89e154133d0c93cd548}{MenuHelpEventHandler}}(Dialog<String> \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}) \{}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00016}00016         this.dialogWindow = \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}};}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00017}00017     \}}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00019}00019     @Override}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00020}\mbox{\hyperlink{classMenuHelpEventHandler_ab166a35b34385960b1a06bd3814694cb}{00020}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classMenuHelpEventHandler_ab166a35b34385960b1a06bd3814694cb}{handle}}(ActionEvent ae) \{}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00021}00021         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.setTitle(\textcolor{stringliteral}{"{}Help"{}});}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00022}00022         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.setHeaderText(\textcolor{stringliteral}{"{}Instructions for usage below:"{}});}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00023}00023         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.setContentText(\textcolor{stringliteral}{"{}-\/ Choose a shape from the panel on the left or \(\backslash\)"{}select\(\backslash\)"{} to select already drawn shapes\(\backslash\)n-\/ Press twice to draw a Circle/Rectangle, thrice to draw a Triangle\(\backslash\)n-\/ You can change the fill colour of a shape or rotate it by right-\/clicking on it\(\backslash\)n-\/ Shapes can be moved by dragging them around"{}});}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00024}00024         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.showAndWait();}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{MenuHelpEventHandler_8java_source_l00026}00026 \}}
+
+\end{DoxyCode}

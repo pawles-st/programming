@@ -1,0 +1,232 @@
+\hypertarget{classMultiThread}{}\doxysection{Multi\+Thread Class Reference}
+\label{classMultiThread}\index{MultiThread@{MultiThread}}
+
+
+Inheritance diagram for Multi\+Thread\+:
+% FIG 0
+
+
+Collaboration diagram for Multi\+Thread\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMultiThread_af032ca7735adf0ce4141ed321726da2b}{Multi\+Thread}} (Socket \mbox{\hyperlink{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}{socket}})
+\item 
+void \mbox{\hyperlink{classMultiThread_a212e56382745c0c4b42844dd9e86bc84}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Socket \mbox{\hyperlink{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}{socket}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Thread class for communication with the client \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{TreeServer_8java_source_l00010}{10}} of file \mbox{\hyperlink{TreeServer_8java_source}{Tree\+Server.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMultiThread_af032ca7735adf0ce4141ed321726da2b}\label{classMultiThread_af032ca7735adf0ce4141ed321726da2b}} 
+\index{MultiThread@{MultiThread}!MultiThread@{MultiThread}}
+\index{MultiThread@{MultiThread}!MultiThread@{MultiThread}}
+\doxysubsubsection{\texorpdfstring{MultiThread()}{MultiThread()}}
+{\footnotesize\ttfamily Multi\+Thread.\+Multi\+Thread (\begin{DoxyParamCaption}\item[{Socket}]{socket }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em socket} & client socket \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TreeServer_8java_source_l00018}{18}} of file \mbox{\hyperlink{TreeServer_8java_source}{Tree\+Server.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018                                       \{}
+\DoxyCodeLine{00019         this.\mbox{\hyperlink{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}{socket}} = \mbox{\hyperlink{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}{socket}};}
+\DoxyCodeLine{00020     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMultiThread_a212e56382745c0c4b42844dd9e86bc84}\label{classMultiThread_a212e56382745c0c4b42844dd9e86bc84}} 
+\index{MultiThread@{MultiThread}!run@{run}}
+\index{run@{run}!MultiThread@{MultiThread}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Multi\+Thread.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main Thread method where the interactions happen 
+
+Definition at line \mbox{\hyperlink{TreeServer_8java_source_l00024}{24}} of file \mbox{\hyperlink{TreeServer_8java_source}{Tree\+Server.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                       \{}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027             \textcolor{comment}{// the client's tree}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029             BinaryTree<?> tree = \textcolor{keyword}{new} BinaryTree<Integer>(\textcolor{stringliteral}{"{}Integer"{}});}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031             \textcolor{comment}{// streams for communication with the client}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033             ObjectInputStream in = \textcolor{keyword}{new} ObjectInputStream(\mbox{\hyperlink{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}{socket}}.getInputStream());}
+\DoxyCodeLine{00034             ObjectOutputStream out = \textcolor{keyword}{new} ObjectOutputStream(\mbox{\hyperlink{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}{socket}}.getOutputStream());}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             \textcolor{comment}{// setting the tree's type}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038             String \mbox{\hyperlink{BinaryTree_8java_a0b86e44425dbe3c9d866aa273f87828a}{type}} = (String) in.readObject();}
+\DoxyCodeLine{00039             \textcolor{keywordflow}{switch} (\mbox{\hyperlink{BinaryTree_8java_a0b86e44425dbe3c9d866aa273f87828a}{type}}) \{}
+\DoxyCodeLine{00040                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}String"{}}:}
+\DoxyCodeLine{00041                     tree = \textcolor{keyword}{new} BinaryTree<String>(\textcolor{stringliteral}{"{}String"{}});}
+\DoxyCodeLine{00042                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00043                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}Double"{}}:}
+\DoxyCodeLine{00044                     tree = \textcolor{keyword}{new} BinaryTree<Double>(\textcolor{stringliteral}{"{}Double"{}});}
+\DoxyCodeLine{00045                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}Integer"{}}:}
+\DoxyCodeLine{00047                     tree = \textcolor{keyword}{new} BinaryTree<Integer>(\textcolor{stringliteral}{"{}Integer"{}});}
+\DoxyCodeLine{00048                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00049             \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051             \textcolor{comment}{// communicating with the client}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055                 \textcolor{comment}{// reading the client's input}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057                 String line = (String) in.readObject();}
+\DoxyCodeLine{00058                 String[] command = line.split(\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{00059                 String message = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00060                 \textcolor{comment}{//System.out.println(command);}}
+\DoxyCodeLine{00061                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00062                     \textcolor{keywordflow}{switch}(command[0]) \{}
+\DoxyCodeLine{00063                         }
+\DoxyCodeLine{00064                         \textcolor{comment}{// closing the socket}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}quit"{}}:}
+\DoxyCodeLine{00067                             \mbox{\hyperlink{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}{socket}}.close();}
+\DoxyCodeLine{00068                             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070                         \textcolor{comment}{// searching for an element}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}search"{}}:}
+\DoxyCodeLine{00073                             \textcolor{keywordflow}{if} (tree.getType().equals(\textcolor{stringliteral}{"{}Integer"{}})) \{}
+\DoxyCodeLine{00074                                 \textcolor{keywordflow}{if} (((BinaryTree<Integer>)tree).search(Integer.parseInt(command[1])) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00075                                     message = \textcolor{stringliteral}{"{}found!"{}};}
+\DoxyCodeLine{00076                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00077                                     message = \textcolor{stringliteral}{"{}not found..."{}};}
+\DoxyCodeLine{00078                                 \}}
+\DoxyCodeLine{00079                             \}}
+\DoxyCodeLine{00080                             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tree.getType().equals(\textcolor{stringliteral}{"{}Double"{}})) \{}
+\DoxyCodeLine{00081                                 \textcolor{keywordflow}{if} (((BinaryTree<Double>)tree).search(Double.parseDouble(command[1])) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00082                                     message = \textcolor{stringliteral}{"{}found!"{}};}
+\DoxyCodeLine{00083                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00084                                     message = \textcolor{stringliteral}{"{}not found..."{}};}
+\DoxyCodeLine{00085                                 \}}
+\DoxyCodeLine{00086                             \}}
+\DoxyCodeLine{00087                             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00088                                 \textcolor{keywordflow}{if} (((BinaryTree<String>)tree).search(command[1]) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00089                                     message = \textcolor{stringliteral}{"{}found!"{}};}
+\DoxyCodeLine{00090                                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00091                                     message = \textcolor{stringliteral}{"{}not found..."{}};}
+\DoxyCodeLine{00092                                 \}}
+\DoxyCodeLine{00093                             \}}
+\DoxyCodeLine{00094                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096                         \textcolor{comment}{// inserting an element}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}insert"{}}:}
+\DoxyCodeLine{00099                             \textcolor{keywordflow}{if} (tree.getType().equals(\textcolor{stringliteral}{"{}Integer"{}})) \{}
+\DoxyCodeLine{00100                                 ((BinaryTree<Integer>)tree).insert(Integer.parseInt(command[1]));}
+\DoxyCodeLine{00101                                 message = \textcolor{stringliteral}{"{}inserted!"{}};}
+\DoxyCodeLine{00102                             \}}
+\DoxyCodeLine{00103                             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tree.getType().equals(\textcolor{stringliteral}{"{}Double"{}})) \{}
+\DoxyCodeLine{00104                                 ((BinaryTree<Double>)tree).insert(Double.parseDouble(command[1]));}
+\DoxyCodeLine{00105                                 message = \textcolor{stringliteral}{"{}inserted!"{}};}
+\DoxyCodeLine{00106                             \}}
+\DoxyCodeLine{00107                             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00108                                 ((BinaryTree<String>)tree).insert(command[1]);}
+\DoxyCodeLine{00109                                 message = \textcolor{stringliteral}{"{}inserted!"{}};}
+\DoxyCodeLine{00110                             \}}
+\DoxyCodeLine{00111                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113                         \textcolor{comment}{// deleting an element, if such exists}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}delete"{}}:}
+\DoxyCodeLine{00116                             \textcolor{keywordflow}{if} (tree.getType().equals(\textcolor{stringliteral}{"{}Integer"{}})) \{}
+\DoxyCodeLine{00117                                 ((BinaryTree<Integer>)tree).delete(Integer.parseInt(command[1]));}
+\DoxyCodeLine{00118                                 message = \textcolor{stringliteral}{"{}deleted!"{}};}
+\DoxyCodeLine{00119                             \}}
+\DoxyCodeLine{00120                             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tree.getType().equals(\textcolor{stringliteral}{"{}Double"{}})) \{}
+\DoxyCodeLine{00121                                 ((BinaryTree<Double>)tree).delete(Double.parseDouble(command[1]));}
+\DoxyCodeLine{00122                                 message = \textcolor{stringliteral}{"{}deleted!"{}};}
+\DoxyCodeLine{00123                             \}}
+\DoxyCodeLine{00124                             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00125                                 ((BinaryTree<String>)tree).delete(command[1]);}
+\DoxyCodeLine{00126                                 message = \textcolor{stringliteral}{"{}deleted"{}};}
+\DoxyCodeLine{00127                             \}}
+\DoxyCodeLine{00128                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130                         \textcolor{comment}{// drawing the tree (doesn't do anything special, the tree is drawn anyway)}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132                         \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}draw"{}}:}
+\DoxyCodeLine{00133                             message = \textcolor{stringliteral}{"{}drawing..."{}};}
+\DoxyCodeLine{00134                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00135                     \}}
+\DoxyCodeLine{00136                 \} \textcolor{keywordflow}{catch} (IndexOutOfBoundsException ioobe) \{}
+\DoxyCodeLine{00137                     message = \textcolor{stringliteral}{"{}Error: invalid argument!"{}};}
+\DoxyCodeLine{00138                 \} \textcolor{keywordflow}{catch} (NumberFormatException nfe) \{}
+\DoxyCodeLine{00139                     message = \textcolor{stringliteral}{"{}Error: invalid argument!"{}};}
+\DoxyCodeLine{00140                 \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142                 \textcolor{comment}{// outputting to the client}}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144                 out.writeObject(message);}
+\DoxyCodeLine{00145                 out.writeObject(tree);}
+\DoxyCodeLine{00146                 \textcolor{comment}{//tree.draw();}}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148                 \textcolor{comment}{// resetting the output}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150                 out.reset();}
+\DoxyCodeLine{00151             \}}
+\DoxyCodeLine{00152             \textcolor{comment}{//socket.close();}}
+\DoxyCodeLine{00153         \} \textcolor{keywordflow}{catch} (IOException ioe) \{}
+\DoxyCodeLine{00154             System.out.println(\textcolor{stringliteral}{"{}I/O Exception!"{}});}
+\DoxyCodeLine{00155             ioe.printStackTrace();}
+\DoxyCodeLine{00156         \} \textcolor{keywordflow}{catch} (ClassNotFoundException cnfe) \{}
+\DoxyCodeLine{00157             System.out.println(\textcolor{stringliteral}{"{}Class not found!"{}});}
+\DoxyCodeLine{00158             cnfe.printStackTrace();}
+\DoxyCodeLine{00159         \}}
+\DoxyCodeLine{00160     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}\label{classMultiThread_a72c97a8fa21feebcc34982e25ce09dd6}} 
+\index{MultiThread@{MultiThread}!socket@{socket}}
+\index{socket@{socket}!MultiThread@{MultiThread}}
+\doxysubsubsection{\texorpdfstring{socket}{socket}}
+{\footnotesize\ttfamily Socket Multi\+Thread.\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+the client socket 
+
+Definition at line \mbox{\hyperlink{TreeServer_8java_source_l00013}{13}} of file \mbox{\hyperlink{TreeServer_8java_source}{Tree\+Server.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TreeServer_8java}{Tree\+Server.\+java}}\end{DoxyCompactItemize}

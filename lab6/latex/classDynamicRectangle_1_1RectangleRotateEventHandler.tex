@@ -1,0 +1,61 @@
+\hypertarget{classDynamicRectangle_1_1RectangleRotateEventHandler}{}\doxysection{Dynamic\+Rectangle.\+Rectangle\+Rotate\+Event\+Handler Class Reference}
+\label{classDynamicRectangle_1_1RectangleRotateEventHandler}\index{DynamicRectangle.RectangleRotateEventHandler@{DynamicRectangle.RectangleRotateEventHandler}}
+Inheritance diagram for Dynamic\+Rectangle.\+Rectangle\+Rotate\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicRectangle_1_1RectangleRotateEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicRectangle_1_1RectangleRotateEventHandler_aef08f99603d450b3d3c55fa3e1282c72}{handle}} (Action\+Event ae)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with rotating the rectangle 
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00123}{123}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_1_1RectangleRotateEventHandler_aef08f99603d450b3d3c55fa3e1282c72}\label{classDynamicRectangle_1_1RectangleRotateEventHandler_aef08f99603d450b3d3c55fa3e1282c72}} 
+\index{DynamicRectangle.RectangleRotateEventHandler@{DynamicRectangle.RectangleRotateEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicRectangle.RectangleRotateEventHandler@{DynamicRectangle.RectangleRotateEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Rectangle.\+Rectangle\+Rotate\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Action\+Event}]{ae }\end{DoxyParamCaption})}
+
+Method that deals with the rotation event 
+\begin{DoxyParams}{Parameters}
+{\em ae} & Event that caused the rotation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00128}{128}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128                                            \{}
+\DoxyCodeLine{00129             TextInputDialog rotateWindow = \textcolor{keyword}{new} TextInputDialog();}
+\DoxyCodeLine{00130             rotateWindow.setTitle(\textcolor{stringliteral}{"{}Rotation"{}});}
+\DoxyCodeLine{00131             rotateWindow.setContentText(\textcolor{stringliteral}{"{}Rotate by: "{}});}
+\DoxyCodeLine{00132             rotateWindow.showAndWait();}
+\DoxyCodeLine{00133             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00134                 \textcolor{keywordtype}{double} angle = Double.parseDouble(rotateWindow.getEditor().getText());}
+\DoxyCodeLine{00135                 Rotate r = \textcolor{keyword}{new} Rotate();}
+\DoxyCodeLine{00136                 r.setAngle(angle);}
+\DoxyCodeLine{00137                 r.setPivotX(getX() + getWidth()/2);}
+\DoxyCodeLine{00138                 r.setPivotY(getY() + getHeight()/2);}
+\DoxyCodeLine{00139                 getTransforms().add(r);}
+\DoxyCodeLine{00140             \} \textcolor{keywordflow}{catch} (IllegalArgumentException e) \{\}}
+\DoxyCodeLine{00141         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicRectangle_8java}{Dynamic\+Rectangle.\+java}}\end{DoxyCompactItemize}

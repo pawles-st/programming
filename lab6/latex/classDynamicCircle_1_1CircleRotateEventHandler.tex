@@ -1,0 +1,61 @@
+\hypertarget{classDynamicCircle_1_1CircleRotateEventHandler}{}\doxysection{Dynamic\+Circle.\+Circle\+Rotate\+Event\+Handler Class Reference}
+\label{classDynamicCircle_1_1CircleRotateEventHandler}\index{DynamicCircle.CircleRotateEventHandler@{DynamicCircle.CircleRotateEventHandler}}
+Inheritance diagram for Dynamic\+Circle.\+Circle\+Rotate\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicCircle_1_1CircleRotateEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicCircle_1_1CircleRotateEventHandler_a92a50b7e66be697ae879f1614ee9087c}{handle}} (Action\+Event ae)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with rotating the circle 
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00122}{122}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicCircle_1_1CircleRotateEventHandler_a92a50b7e66be697ae879f1614ee9087c}\label{classDynamicCircle_1_1CircleRotateEventHandler_a92a50b7e66be697ae879f1614ee9087c}} 
+\index{DynamicCircle.CircleRotateEventHandler@{DynamicCircle.CircleRotateEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicCircle.CircleRotateEventHandler@{DynamicCircle.CircleRotateEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Circle.\+Circle\+Rotate\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Action\+Event}]{ae }\end{DoxyParamCaption})}
+
+Method that deals with the rotation event 
+\begin{DoxyParams}{Parameters}
+{\em ae} & Event that caused the rotation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00127}{127}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127                                            \{}
+\DoxyCodeLine{00128             TextInputDialog rotateWindow = \textcolor{keyword}{new} TextInputDialog();}
+\DoxyCodeLine{00129             rotateWindow.setTitle(\textcolor{stringliteral}{"{}Rotation"{}});}
+\DoxyCodeLine{00130             rotateWindow.setContentText(\textcolor{stringliteral}{"{}Rotate by: "{}});}
+\DoxyCodeLine{00131             rotateWindow.showAndWait();}
+\DoxyCodeLine{00132             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00133                 \textcolor{keywordtype}{double} angle = Double.parseDouble(rotateWindow.getEditor().getText());}
+\DoxyCodeLine{00134                 Rotate r = \textcolor{keyword}{new} Rotate();}
+\DoxyCodeLine{00135                 r.setAngle(angle);}
+\DoxyCodeLine{00136                 r.setPivotX(getCenterX());}
+\DoxyCodeLine{00137                 r.setPivotY(getCenterY());}
+\DoxyCodeLine{00138                 getTransforms().add(r);}
+\DoxyCodeLine{00139             \} \textcolor{keywordflow}{catch} (IllegalArgumentException e) \{\}}
+\DoxyCodeLine{00140         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicCircle_8java}{Dynamic\+Circle.\+java}}\end{DoxyCompactItemize}

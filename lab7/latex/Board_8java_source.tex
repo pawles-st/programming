@@ -1,0 +1,105 @@
+\hypertarget{Board_8java_source}{}\doxysection{Board.\+java}
+\mbox{\hyperlink{Board_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00001}00001 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00002}00002 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00003}00003 \textcolor{keyword}{import} javafx.application.Application;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00004}00004 \textcolor{keyword}{import} javafx.scene.layout.ColumnConstraints;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00005}00005 \textcolor{keyword}{import} javafx.scene.layout.GridPane;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.scene.layout.Priority;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00007}00007 \textcolor{keyword}{import} javafx.scene.layout.RowConstraints;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00008}00008 \textcolor{keyword}{import} javafx.scene.Scene;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00009}00009 \textcolor{keyword}{import} javafx.stage.Stage;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00015}\mbox{\hyperlink{classBoard}{00015}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classBoard}{Board}} \textcolor{keyword}{extends} Application \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00016}00016     @Override}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00018}\mbox{\hyperlink{classBoard_acf824b0b35945e7d8904740edddfb117}{00018}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBoard_acf824b0b35945e7d8904740edddfb117}{start}}(Stage primaryStage) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00020}00020         \textcolor{comment}{// arguments}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00022}00022         \textcolor{keyword}{final} Application.Parameters param = this.getParameters();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00023}00023         \textcolor{keyword}{final} List<String> args = param.getUnnamed();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00024}00024         \textcolor{keywordflow}{if} (args.size() < 4) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00025}00025             System.out.println(\textcolor{stringliteral}{"{}error: not enough arguments!"{}});}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00026}00026             System.exit(0);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00027}00027         \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00028}00028         \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00029}00029         \textcolor{keywordtype}{int} m = 0;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00030}00030         \textcolor{keywordtype}{double} k = 0.0;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00031}00031         \textcolor{keywordtype}{double} p = 0.0;}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00032}00032         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00033}00033             n = Integer.parseInt(args.get(0));}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00034}00034             m = Integer.parseInt(args.get(1));}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00035}00035             k = Double.parseDouble(args.get(2));}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00036}00036             p = Double.parseDouble(args.get(3));}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00037}00037             \textcolor{keywordflow}{if} (n <= 0 || m <= 0 || k <= 0 || p < 0 || p > 1) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00038}00038                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00039}00039             \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00040}00040         \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00041}00041             System.out.println(\textcolor{stringliteral}{"{}error: invalid arguments!"{}});}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00042}00042             System.exit(0);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00043}00043         \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00045}00045         \textcolor{comment}{// root pane preparation}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00047}00047         \textcolor{keyword}{final} GridPane root = \textcolor{keyword}{new} GridPane();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00048}00048         \textcolor{keyword}{final} ArrayList<ColumnConstraints> columnList = \textcolor{keyword}{new} ArrayList<ColumnConstraints>();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00049}00049         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00050}00050             ColumnConstraints c = \textcolor{keyword}{new} ColumnConstraints();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00051}00051             c.setPercentWidth(100.0/n);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00052}00052             c.setFillWidth(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00053}00053             c.setHgrow(Priority.ALWAYS);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00054}00054             columnList.add(c);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00055}00055         \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00056}00056         root.getColumnConstraints().addAll(columnList);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00057}00057         \textcolor{keyword}{final} ArrayList<RowConstraints> rowList = \textcolor{keyword}{new} ArrayList<RowConstraints>();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00058}00058         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < m; ++i) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00059}00059             RowConstraints c = \textcolor{keyword}{new} RowConstraints();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00060}00060             c.setPercentHeight(100.0/m);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00061}00061             c.setFillHeight(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00062}00062             c.setVgrow(Priority.ALWAYS);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00063}00063             rowList.add(c);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00064}00064         \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00065}00065         root.getRowConstraints().addAll(rowList);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00067}00067         \textcolor{comment}{// RNG}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00069}00069         \mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_a1da20d91aa47fa7f4c2cf16e40224956}{initialise}}(k);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00071}00071         \textcolor{comment}{// gui objects}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00073}00073         \textcolor{keyword}{final} ArrayList<TileButton> tileList = \textcolor{keyword}{new} ArrayList<TileButton>();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00074}00074         \textcolor{keyword}{final} ArrayList<TileThread> threadList = \textcolor{keyword}{new} ArrayList<TileThread>();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00075}00075         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a2366c47201bbf9df73a5d826ac91bfb3}{initValues}}(p, tileList, n, m);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00076}00076         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00077}00077             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < m; ++j) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00078}00078                 \textcolor{keyword}{final} \mbox{\hyperlink{classTileButton}{TileButton}} b = \textcolor{keyword}{new} \mbox{\hyperlink{classTileButton}{TileButton}}();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00079}00079                 \textcolor{keyword}{final} \textcolor{keywordtype}{double} hue = \mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_a3bd488d2c6e575a211819d61cadc176c}{randomHue}}();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00080}00080                 b.\mbox{\hyperlink{classTileButton_a10dce7129f2cb518fa4886340a25a736}{changeBackground}}(hue);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00081}00081                 b.\mbox{\hyperlink{classTileButton_a07736d501f0bbc4d71af056ce15c053e}{setHue}}(hue);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00082}00082                 tileList.add(b);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00083}00083                 \mbox{\hyperlink{classTileThread}{TileThread}} t = \textcolor{keyword}{new} \mbox{\hyperlink{classTileThread}{TileThread}}(b, i, j);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00084}00084                 t.setDaemon(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00085}00085                 root.add(b, i, j);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00086}00086                 threadList.add(t);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00087}00087             \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00088}00088         \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00090}00090         \textcolor{comment}{// starting the threads}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00092}00092         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n*m; ++i) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00093}00093             threadList.get(i).start();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00094}00094         \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00096}00096         \textcolor{comment}{// setting the stage}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00098}00098         primaryStage.setTitle(\textcolor{stringliteral}{"{}Board"{}});}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00099}00099         primaryStage.setScene(\textcolor{keyword}{new} Scene(root, 800, 640));}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00100}00100         primaryStage.show();}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00105}\mbox{\hyperlink{classBoard_a02b0d3be0af5b806cd7d48d2fa2685bf}{00105}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classBoard_a02b0d3be0af5b806cd7d48d2fa2685bf}{main}}(String[] args) \{}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00106}00106         launch(args);}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00107}00107     \}}
+\DoxyCodeLine{\Hypertarget{Board_8java_source_l00108}00108 \}}
+
+\end{DoxyCode}

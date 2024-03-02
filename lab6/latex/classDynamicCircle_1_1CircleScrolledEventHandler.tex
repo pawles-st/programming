@@ -1,0 +1,60 @@
+\hypertarget{classDynamicCircle_1_1CircleScrolledEventHandler}{}\doxysection{Dynamic\+Circle.\+Circle\+Scrolled\+Event\+Handler Class Reference}
+\label{classDynamicCircle_1_1CircleScrolledEventHandler}\index{DynamicCircle.CircleScrolledEventHandler@{DynamicCircle.CircleScrolledEventHandler}}
+Inheritance diagram for Dynamic\+Circle.\+Circle\+Scrolled\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicCircle_1_1CircleScrolledEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicCircle_1_1CircleScrolledEventHandler_a743111a06746b11508c838a2933a0020}{handle}} (Scroll\+Event se)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with scrolling on the circle 
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00081}{81}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicCircle_1_1CircleScrolledEventHandler_a743111a06746b11508c838a2933a0020}\label{classDynamicCircle_1_1CircleScrolledEventHandler_a743111a06746b11508c838a2933a0020}} 
+\index{DynamicCircle.CircleScrolledEventHandler@{DynamicCircle.CircleScrolledEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicCircle.CircleScrolledEventHandler@{DynamicCircle.CircleScrolledEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Circle.\+Circle\+Scrolled\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Scroll\+Event}]{se }\end{DoxyParamCaption})}
+
+Method that deals with the scrolling event 
+\begin{DoxyParams}{Parameters}
+{\em se} & Event that caused the scrolling event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00086}{86}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086                                            \{}
+\DoxyCodeLine{00087             Scale s = \textcolor{keyword}{new} Scale();}
+\DoxyCodeLine{00088             \textcolor{keywordflow}{if} (se.getDeltaY() > 0) \{}
+\DoxyCodeLine{00089                 s.setX(se.getDeltaY() * 0.03);}
+\DoxyCodeLine{00090                 s.setY(se.getDeltaY() * 0.03);}
+\DoxyCodeLine{00091             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (se.getDeltaY() < 0) \{}
+\DoxyCodeLine{00092                 s.setX(-\/1 / (se.getDeltaY() * 0.03));}
+\DoxyCodeLine{00093                 s.setY(-\/1 / (se.getDeltaY() * 0.03));}
+\DoxyCodeLine{00094             \}}
+\DoxyCodeLine{00095             s.setPivotX(getCenterX());}
+\DoxyCodeLine{00096             s.setPivotY(getCenterY());}
+\DoxyCodeLine{00097             getTransforms().add(s);}
+\DoxyCodeLine{00098         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicCircle_8java}{Dynamic\+Circle.\+java}}\end{DoxyCompactItemize}

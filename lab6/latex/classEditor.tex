@@ -1,0 +1,134 @@
+\hypertarget{classEditor}{}\doxysection{Editor Class Reference}
+\label{classEditor}\index{Editor@{Editor}}
+Inheritance diagram for Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEditor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditor_a651b09b8964f7282fcd2d55b315c898c}{start}} (Stage primary\+Stage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classEditor_a980a4462034b32a4370782355a666d50}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class of the \mbox{\hyperlink{classEditor}{Editor}} program where every appliation object is defined \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{Editor_8java_source_l00020}{20}} of file \mbox{\hyperlink{Editor_8java_source}{Editor.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEditor_a980a4462034b32a4370782355a666d50}\label{classEditor_a980a4462034b32a4370782355a666d50}} 
+\index{Editor@{Editor}!main@{main}}
+\index{main@{main}!Editor@{Editor}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Editor.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+The main function that starts the program 
+\begin{DoxyParams}{Parameters}
+{\em args} & entry arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Editor_8java_source_l00085}{85}} of file \mbox{\hyperlink{Editor_8java_source}{Editor.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085                                            \{}
+\DoxyCodeLine{00086         launch(args);}
+\DoxyCodeLine{00087     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEditor_a651b09b8964f7282fcd2d55b315c898c}\label{classEditor_a651b09b8964f7282fcd2d55b315c898c}} 
+\index{Editor@{Editor}!start@{start}}
+\index{start@{start}!Editor@{Editor}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Editor.\+start (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage }\end{DoxyParamCaption})}
+
+The main Java\+FX function 
+
+Definition at line \mbox{\hyperlink{Editor_8java_source_l00023}{23}} of file \mbox{\hyperlink{Editor_8java_source}{Editor.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023                                           \{}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{comment}{// initatialisation}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{final} BorderPane root = \textcolor{keyword}{new} BorderPane();}
+\DoxyCodeLine{00028         \textcolor{keyword}{final} Pane canvas = \textcolor{keyword}{new} Pane();}
+\DoxyCodeLine{00029         \textcolor{keyword}{final} MenuBar menuBarMain = \textcolor{keyword}{new} MenuBar();}
+\DoxyCodeLine{00030         \textcolor{keyword}{final} Menu helpMenu = \textcolor{keyword}{new} Menu(\textcolor{stringliteral}{"{}Help"{}});}
+\DoxyCodeLine{00031         \textcolor{keyword}{final} MenuItem infoMenuItem = \textcolor{keyword}{new} MenuItem(\textcolor{stringliteral}{"{}Info"{}});}
+\DoxyCodeLine{00032         \textcolor{keyword}{final} MenuItem helpMenuItem = \textcolor{keyword}{new} MenuItem(\textcolor{stringliteral}{"{}Help"{}});}
+\DoxyCodeLine{00033         \textcolor{keyword}{final} ToolBar shapesPane = \textcolor{keyword}{new} ToolBar();}
+\DoxyCodeLine{00034         \textcolor{keyword}{final} Button buttonSelect = \textcolor{keyword}{new} Button(\textcolor{stringliteral}{"{}select"{}});}
+\DoxyCodeLine{00035         \textcolor{keyword}{final} Button buttonCircle = \textcolor{keyword}{new} Button(\textcolor{stringliteral}{"{}circle"{}});}
+\DoxyCodeLine{00036         \textcolor{keyword}{final} Button buttonRectangle = \textcolor{keyword}{new} Button(\textcolor{stringliteral}{"{}rectangle"{}});}
+\DoxyCodeLine{00037         \textcolor{keyword}{final} Button buttonTriangle = \textcolor{keyword}{new} Button(\textcolor{stringliteral}{"{}triangle"{}});}
+\DoxyCodeLine{00038         \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}} stateWrap = \textcolor{keyword}{new} \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}();}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         \textcolor{comment}{// dialog windows}}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         \textcolor{keyword}{final} Dialog<String> infoDialogWindow = \textcolor{keyword}{new} Dialog<String>();}
+\DoxyCodeLine{00043         \textcolor{keyword}{final} Dialog<String> helpDialogWindow = \textcolor{keyword}{new} Dialog<String>();}
+\DoxyCodeLine{00044         \textcolor{keyword}{final} ButtonType dialogButton = \textcolor{keyword}{new} ButtonType(\textcolor{stringliteral}{"{}Ok"{}}, ButtonData.OK\_DONE);}
+\DoxyCodeLine{00045         infoDialogWindow.getDialogPane().getButtonTypes().add(dialogButton);}
+\DoxyCodeLine{00046         helpDialogWindow.getDialogPane().getButtonTypes().add(dialogButton);}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048         \textcolor{comment}{// object setting}}
+\DoxyCodeLine{00049         }
+\DoxyCodeLine{00050         shapesPane.setOrientation(Orientation.VERTICAL);}
+\DoxyCodeLine{00051         buttonSelect.setPrefWidth(100.0);}
+\DoxyCodeLine{00052         buttonCircle.setPrefWidth(100.0);}
+\DoxyCodeLine{00053         buttonRectangle.setPrefWidth(100.0);}
+\DoxyCodeLine{00054         buttonTriangle.setPrefWidth(100.0);}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056         \textcolor{comment}{// adding objects}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         helpMenu.getItems().addAll(infoMenuItem, helpMenuItem);}
+\DoxyCodeLine{00059         menuBarMain.getMenus().add(helpMenu);}
+\DoxyCodeLine{00060         shapesPane.getItems().addAll(buttonSelect, buttonCircle, buttonRectangle, buttonTriangle);}
+\DoxyCodeLine{00061         root.setCenter(canvas);}
+\DoxyCodeLine{00062         root.setTop(menuBarMain);}
+\DoxyCodeLine{00063         root.setLeft(shapesPane);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065         \textcolor{comment}{// listeners \& handlers}}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067         infoMenuItem.setOnAction(\textcolor{keyword}{new} \mbox{\hyperlink{classMenuInfoEventHandler}{MenuInfoEventHandler}}(infoDialogWindow));}
+\DoxyCodeLine{00068         helpMenuItem.setOnAction(\textcolor{keyword}{new} \mbox{\hyperlink{classMenuHelpEventHandler}{MenuHelpEventHandler}}(helpDialogWindow));}
+\DoxyCodeLine{00069         \mbox{\hyperlink{classButtonEventHandler}{ButtonEventHandler}} buttonEH = \textcolor{keyword}{new} \mbox{\hyperlink{classButtonEventHandler}{ButtonEventHandler}}(stateWrap, canvas);}
+\DoxyCodeLine{00070         buttonSelect.setOnAction(buttonEH);}
+\DoxyCodeLine{00071         buttonCircle.setOnAction(buttonEH);}
+\DoxyCodeLine{00072         buttonRectangle.setOnAction(buttonEH);}
+\DoxyCodeLine{00073         buttonTriangle.setOnAction(buttonEH);}
+\DoxyCodeLine{00074         canvas.setOnMouseClicked(\textcolor{keyword}{new} \mbox{\hyperlink{classDrawEventHandler}{DrawEventHandler}}(stateWrap, canvas));}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         \textcolor{comment}{// setting up the stage}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078         primaryStage.setTitle(\textcolor{stringliteral}{"{}Graphic Editor"{}});}
+\DoxyCodeLine{00079         primaryStage.setScene(\textcolor{keyword}{new} Scene(root, 800, 640));}
+\DoxyCodeLine{00080         primaryStage.show();}
+\DoxyCodeLine{00081     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Editor_8java}{Editor.\+java}}\end{DoxyCompactItemize}

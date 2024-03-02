@@ -1,0 +1,44 @@
+\hypertarget{Node_8java_source}{}\doxysection{Node.\+java}
+\mbox{\hyperlink{Node_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00001}00001 \textcolor{keyword}{import} java.io.Serializable;}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00002}00002 \textcolor{keyword}{import} java.lang.Comparable;}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00008}\mbox{\hyperlink{classNode_3_01T_01extends_01Comparable}{00008}} \textcolor{keyword}{class }Node<T \textcolor{keyword}{extends} Comparable<T>> implements java.io.Serializable \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00010}\mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{00010}}     \textcolor{keyword}{private} T \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}};}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00013}\mbox{\hyperlink{Node_8java_aa984a77daefc7441152486c3583e0b46}{00013}}     \textcolor{keyword}{private} Node<T> \mbox{\hyperlink{Node_8java_aa984a77daefc7441152486c3583e0b46}{left}};}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00016}\mbox{\hyperlink{Node_8java_af8de5aa0847c269ad98985e5e61d8da4}{00016}}     \textcolor{keyword}{private} Node<T> \mbox{\hyperlink{Node_8java_af8de5aa0847c269ad98985e5e61d8da4}{right}};}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00021}00021     \textcolor{keyword}{public} Node (T item) \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00022}00022         \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}} = item;}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00023}00023         \mbox{\hyperlink{Node_8java_aa984a77daefc7441152486c3583e0b46}{left}} = \mbox{\hyperlink{Node_8java_af8de5aa0847c269ad98985e5e61d8da4}{right}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00024}00024     \}}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00029}00029     \textcolor{keyword}{public} T getKey() \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00030}00030         \textcolor{keywordflow}{return} \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}};}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00036}00036     \textcolor{keyword}{public} \textcolor{keywordtype}{void} setKey(T value) \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00037}00037         \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}} = value;}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00043}00043     \textcolor{keyword}{public} Node<T> getLeft() \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00044}00044         \textcolor{keywordflow}{return} \mbox{\hyperlink{Node_8java_aa984a77daefc7441152486c3583e0b46}{left}};}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00050}00050     \textcolor{keyword}{public} Node<T> getRight() \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00051}00051         \textcolor{keywordflow}{return} \mbox{\hyperlink{Node_8java_af8de5aa0847c269ad98985e5e61d8da4}{right}};}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00057}00057     \textcolor{keyword}{public} \textcolor{keywordtype}{void} setLeft(Node<T> node) \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00058}00058         \mbox{\hyperlink{Node_8java_aa984a77daefc7441152486c3583e0b46}{left}} = node;}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00064}00064     \textcolor{keyword}{public} \textcolor{keywordtype}{void} setRight(Node<T> node) \{}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00065}00065         \mbox{\hyperlink{Node_8java_af8de5aa0847c269ad98985e5e61d8da4}{right}} = node;}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00066}00066     \}}
+\DoxyCodeLine{\Hypertarget{Node_8java_source_l00067}00067 \}}
+
+\end{DoxyCode}

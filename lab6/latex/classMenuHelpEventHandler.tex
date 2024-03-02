@@ -1,0 +1,99 @@
+\hypertarget{classMenuHelpEventHandler}{}\doxysection{Menu\+Help\+Event\+Handler Class Reference}
+\label{classMenuHelpEventHandler}\index{MenuHelpEventHandler@{MenuHelpEventHandler}}
+Inheritance diagram for Menu\+Help\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMenuHelpEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMenuHelpEventHandler_aa6b6ad56f204d89e154133d0c93cd548}{Menu\+Help\+Event\+Handler}} (Dialog$<$ String $>$ \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialog\+Window}})
+\item 
+void \mbox{\hyperlink{classMenuHelpEventHandler_ab166a35b34385960b1a06bd3814694cb}{handle}} (Action\+Event ae)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dialog$<$ String $>$ \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialog\+Window}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class that deals with the \char`\"{}help\char`\"{} dialog window \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{MenuHelpEventHandler_8java_source_l00009}{9}} of file \mbox{\hyperlink{MenuHelpEventHandler_8java_source}{Menu\+Help\+Event\+Handler.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMenuHelpEventHandler_aa6b6ad56f204d89e154133d0c93cd548}\label{classMenuHelpEventHandler_aa6b6ad56f204d89e154133d0c93cd548}} 
+\index{MenuHelpEventHandler@{MenuHelpEventHandler}!MenuHelpEventHandler@{MenuHelpEventHandler}}
+\index{MenuHelpEventHandler@{MenuHelpEventHandler}!MenuHelpEventHandler@{MenuHelpEventHandler}}
+\doxysubsubsection{\texorpdfstring{MenuHelpEventHandler()}{MenuHelpEventHandler()}}
+{\footnotesize\ttfamily Menu\+Help\+Event\+Handler.\+Menu\+Help\+Event\+Handler (\begin{DoxyParamCaption}\item[{Dialog$<$ String $>$}]{dialog\+Window }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em dialog\+Window} & the dialog window to handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{MenuHelpEventHandler_8java_source_l00015}{15}} of file \mbox{\hyperlink{MenuHelpEventHandler_8java_source}{Menu\+Help\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                                                              \{}
+\DoxyCodeLine{00016         this.\mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}} = \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}};}
+\DoxyCodeLine{00017     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenuHelpEventHandler_ab166a35b34385960b1a06bd3814694cb}\label{classMenuHelpEventHandler_ab166a35b34385960b1a06bd3814694cb}} 
+\index{MenuHelpEventHandler@{MenuHelpEventHandler}!handle@{handle}}
+\index{handle@{handle}!MenuHelpEventHandler@{MenuHelpEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Menu\+Help\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Action\+Event}]{ae }\end{DoxyParamCaption})}
+
+Method that deals with showing the window 
+
+Definition at line \mbox{\hyperlink{MenuHelpEventHandler_8java_source_l00020}{20}} of file \mbox{\hyperlink{MenuHelpEventHandler_8java_source}{Menu\+Help\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020                                        \{}
+\DoxyCodeLine{00021         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.setTitle(\textcolor{stringliteral}{"{}Help"{}});}
+\DoxyCodeLine{00022         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.setHeaderText(\textcolor{stringliteral}{"{}Instructions for usage below:"{}});}
+\DoxyCodeLine{00023         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.setContentText(\textcolor{stringliteral}{"{}-\/ Choose a shape from the panel on the left or \(\backslash\)"{}select\(\backslash\)"{} to select already drawn shapes\(\backslash\)n-\/ Press twice to draw a Circle/Rectangle, thrice to draw a Triangle\(\backslash\)n-\/ You can change the fill colour of a shape or rotate it by right-\/clicking on it\(\backslash\)n-\/ Shapes can be moved by dragging them around"{}});}
+\DoxyCodeLine{00024         \mbox{\hyperlink{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}{dialogWindow}}.showAndWait();}
+\DoxyCodeLine{00025     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}\label{classMenuHelpEventHandler_a1301ba5302101771d0025f785166dc15}} 
+\index{MenuHelpEventHandler@{MenuHelpEventHandler}!dialogWindow@{dialogWindow}}
+\index{dialogWindow@{dialogWindow}!MenuHelpEventHandler@{MenuHelpEventHandler}}
+\doxysubsubsection{\texorpdfstring{dialogWindow}{dialogWindow}}
+{\footnotesize\ttfamily Dialog$<$String$>$ Menu\+Help\+Event\+Handler.\+dialog\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that holds the dialog window 
+
+Definition at line \mbox{\hyperlink{MenuHelpEventHandler_8java_source_l00011}{11}} of file \mbox{\hyperlink{MenuHelpEventHandler_8java_source}{Menu\+Help\+Event\+Handler.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MenuHelpEventHandler_8java}{Menu\+Help\+Event\+Handler.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,16 @@
+\hypertarget{binary__tree_8hpp}{}\doxysection{binary\+\_\+tree.\+hpp File Reference}
+\label{binary__tree_8hpp}\index{binary\_tree.hpp@{binary\_tree.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for binary\+\_\+tree.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structNode}{Node$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classBinaryTreePtr}{Binary\+Tree\+Ptr}}
+\item 
+class \mbox{\hyperlink{classBinaryTree}{Binary\+Tree$<$ T $>$}}
+\end{DoxyCompactItemize}

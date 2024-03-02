@@ -1,0 +1,168 @@
+\hypertarget{classRNG}{}\doxysection{RNG Class Reference}
+\label{classRNG}\index{RNG@{RNG}}
+
+
+Collaboration diagram for RNG\+:
+% FIG 0
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classRNG_a1da20d91aa47fa7f4c2cf16e40224956}{initialise}} (double \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}})
+\item 
+static double \mbox{\hyperlink{classRNG_a3bd488d2c6e575a211819d61cadc176c}{random\+Hue}} ()
+\item 
+static long \mbox{\hyperlink{classRNG_a9486cf43ea9add2f25ceda793133dc7b}{random\+Delay}} ()
+\item 
+static double \mbox{\hyperlink{classRNG_ad8e17cbbc05a149e98f541f5c223ea1d}{random\+Probability}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRNG_ac0e29c8cb7243b89c81185e601566fe9}{RNG}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}}
+\item 
+static final Random \mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}} = new Random()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Random number generator class \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00007}{7}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRNG_ac0e29c8cb7243b89c81185e601566fe9}\label{classRNG_ac0e29c8cb7243b89c81185e601566fe9}} 
+\index{RNG@{RNG}!RNG@{RNG}}
+\index{RNG@{RNG}!RNG@{RNG}}
+\doxysubsubsection{\texorpdfstring{RNG()}{RNG()}}
+{\footnotesize\ttfamily RNG.\+RNG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Private constructor, creation of an object is impossible 
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00013}{13}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRNG_a1da20d91aa47fa7f4c2cf16e40224956}\label{classRNG_a1da20d91aa47fa7f4c2cf16e40224956}} 
+\index{RNG@{RNG}!initialise@{initialise}}
+\index{initialise@{initialise}!RNG@{RNG}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily static void RNG.\+initialise (\begin{DoxyParamCaption}\item[{double}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method assigning a value to variable k 
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00015}{15}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                                             \{}
+\DoxyCodeLine{00016         \mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}} = \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}};}
+\DoxyCodeLine{00017     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRNG_a9486cf43ea9add2f25ceda793133dc7b}\label{classRNG_a9486cf43ea9add2f25ceda793133dc7b}} 
+\index{RNG@{RNG}!randomDelay@{randomDelay}}
+\index{randomDelay@{randomDelay}!RNG@{RNG}}
+\doxysubsubsection{\texorpdfstring{randomDelay()}{randomDelay()}}
+{\footnotesize\ttfamily static long RNG.\+random\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method for creation of random delay \begin{DoxyReturn}{Returns}
+long randomly generated number of milliseconds of delay 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00027}{27}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027                                      \{}
+\DoxyCodeLine{00028         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{long}) ((\mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}}.nextDouble() + 0.5) * \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}});}
+\DoxyCodeLine{00029     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRNG_a3bd488d2c6e575a211819d61cadc176c}\label{classRNG_a3bd488d2c6e575a211819d61cadc176c}} 
+\index{RNG@{RNG}!randomHue@{randomHue}}
+\index{randomHue@{randomHue}!RNG@{RNG}}
+\doxysubsubsection{\texorpdfstring{randomHue()}{randomHue()}}
+{\footnotesize\ttfamily static double RNG.\+random\+Hue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method for creation of a random hue \begin{DoxyReturn}{Returns}
+double randomly generated hue 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00021}{21}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021                                      \{}
+\DoxyCodeLine{00022         \textcolor{keywordflow}{return} \mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}}.nextDouble() * 360;}
+\DoxyCodeLine{00023     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRNG_ad8e17cbbc05a149e98f541f5c223ea1d}\label{classRNG_ad8e17cbbc05a149e98f541f5c223ea1d}} 
+\index{RNG@{RNG}!randomProbability@{randomProbability}}
+\index{randomProbability@{randomProbability}!RNG@{RNG}}
+\doxysubsubsection{\texorpdfstring{randomProbability()}{randomProbability()}}
+{\footnotesize\ttfamily static double RNG.\+random\+Probability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method for creation of random probability event \begin{DoxyReturn}{Returns}
+double the probability for deciding what the tile does (range 0.\+0 -\/ 1.\+0) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00033}{33}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033                                              \{}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{return} \mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}}.nextDouble();}
+\DoxyCodeLine{00035     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}\label{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}} 
+\index{RNG@{RNG}!generator@{generator}}
+\index{generator@{generator}!RNG@{RNG}}
+\doxysubsubsection{\texorpdfstring{generator}{generator}}
+{\footnotesize\ttfamily final Random RNG.\+generator = new Random()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+The generator used for number generation 
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00011}{11}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+\mbox{\Hypertarget{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}\label{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}} 
+\index{RNG@{RNG}!k@{k}}
+\index{k@{k}!RNG@{RNG}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily double RNG.\+k\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+The variable used to calculate the time between actions of a tile 
+
+Definition at line \mbox{\hyperlink{RNG_8java_source_l00009}{9}} of file \mbox{\hyperlink{RNG_8java_source}{RNG.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RNG_8java}{RNG.\+java}}\end{DoxyCompactItemize}

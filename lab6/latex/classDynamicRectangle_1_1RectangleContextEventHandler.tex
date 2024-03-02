@@ -1,0 +1,101 @@
+\hypertarget{classDynamicRectangle_1_1RectangleContextEventHandler}{}\doxysection{Dynamic\+Rectangle.\+Rectangle\+Context\+Event\+Handler Class Reference}
+\label{classDynamicRectangle_1_1RectangleContextEventHandler}\index{DynamicRectangle.RectangleContextEventHandler@{DynamicRectangle.RectangleContextEventHandler}}
+Inheritance diagram for Dynamic\+Rectangle.\+Rectangle\+Context\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicRectangle_1_1RectangleContextEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler_a9d5352fb6658d5efc1632bdb3de24cb1}{handle}} (Context\+Menu\+Event cme)
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler_a29cb9ab43d0830e600157f32991a5f55}{Rectangle\+Context\+Event\+Handler}} (Context\+Menu \mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler_ac28ee6ab1ff2c89c70e167e59a6661e2}{shape\+Menu}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Context\+Menu \mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler_ac28ee6ab1ff2c89c70e167e59a6661e2}{shape\+Menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with showing the context menu on the rectangle 
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00102}{102}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_1_1RectangleContextEventHandler_a29cb9ab43d0830e600157f32991a5f55}\label{classDynamicRectangle_1_1RectangleContextEventHandler_a29cb9ab43d0830e600157f32991a5f55}} 
+\index{DynamicRectangle.RectangleContextEventHandler@{DynamicRectangle.RectangleContextEventHandler}!RectangleContextEventHandler@{RectangleContextEventHandler}}
+\index{RectangleContextEventHandler@{RectangleContextEventHandler}!DynamicRectangle.RectangleContextEventHandler@{DynamicRectangle.RectangleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{RectangleContextEventHandler()}{RectangleContextEventHandler()}}
+{\footnotesize\ttfamily Dynamic\+Rectangle.\+Rectangle\+Context\+Event\+Handler.\+Rectangle\+Context\+Event\+Handler (\begin{DoxyParamCaption}\item[{Context\+Menu}]{shape\+Menu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em shape\+Menu} & The context menu to show \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00108}{108}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108                                                             \{}
+\DoxyCodeLine{00109             this.\mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler_ac28ee6ab1ff2c89c70e167e59a6661e2}{shapeMenu}} = \mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler_ac28ee6ab1ff2c89c70e167e59a6661e2}{shapeMenu}};}
+\DoxyCodeLine{00110         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_1_1RectangleContextEventHandler_a9d5352fb6658d5efc1632bdb3de24cb1}\label{classDynamicRectangle_1_1RectangleContextEventHandler_a9d5352fb6658d5efc1632bdb3de24cb1}} 
+\index{DynamicRectangle.RectangleContextEventHandler@{DynamicRectangle.RectangleContextEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicRectangle.RectangleContextEventHandler@{DynamicRectangle.RectangleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Rectangle.\+Rectangle\+Context\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Context\+Menu\+Event}]{cme }\end{DoxyParamCaption})}
+
+Method that deals with the context menu event 
+\begin{DoxyParams}{Parameters}
+{\em cme} & Event that caused the context menu popup \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00115}{115}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115                                                  \{}
+\DoxyCodeLine{00116             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} == \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{00117                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00118             \}}
+\DoxyCodeLine{00119             \mbox{\hyperlink{classDynamicRectangle_1_1RectangleContextEventHandler_ac28ee6ab1ff2c89c70e167e59a6661e2}{shapeMenu}}.show(\mbox{\hyperlink{classDynamicRectangle}{DynamicRectangle}}.this, cme.getScreenX(), cme.getScreenY());}
+\DoxyCodeLine{00120         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_1_1RectangleContextEventHandler_ac28ee6ab1ff2c89c70e167e59a6661e2}\label{classDynamicRectangle_1_1RectangleContextEventHandler_ac28ee6ab1ff2c89c70e167e59a6661e2}} 
+\index{DynamicRectangle.RectangleContextEventHandler@{DynamicRectangle.RectangleContextEventHandler}!shapeMenu@{shapeMenu}}
+\index{shapeMenu@{shapeMenu}!DynamicRectangle.RectangleContextEventHandler@{DynamicRectangle.RectangleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{shapeMenu}{shapeMenu}}
+{\footnotesize\ttfamily Context\+Menu Dynamic\+Rectangle.\+Rectangle\+Context\+Event\+Handler.\+shape\+Menu\hspace{0.3cm}{\ttfamily [package]}}
+
+Variable that holds the context menu 
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00104}{104}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicRectangle_8java}{Dynamic\+Rectangle.\+java}}\end{DoxyCompactItemize}

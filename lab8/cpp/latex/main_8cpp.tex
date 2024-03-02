@@ -1,0 +1,116 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include \char`\"{}binary\+\_\+tree.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main function of the programme 
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007            \{}
+\DoxyCodeLine{00008     }
+\DoxyCodeLine{00009     \textcolor{comment}{// initialising the tree}}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011     std::string type;}
+\DoxyCodeLine{00012     std::cout << \textcolor{stringliteral}{"{}tree type (Integer, Double, or String): "{}};}
+\DoxyCodeLine{00013     std::cin >> type;}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \mbox{\hyperlink{classBinaryTreePtr}{BinaryTreePtr}}* tree;}
+\DoxyCodeLine{00016     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Integer"{}}) \{}
+\DoxyCodeLine{00017         tree = \textcolor{keyword}{new} \mbox{\hyperlink{classBinaryTree}{BinaryTree<int>}}(type);}
+\DoxyCodeLine{00018     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Double"{}}) \{}
+\DoxyCodeLine{00019         tree = \textcolor{keyword}{new} \mbox{\hyperlink{classBinaryTree}{BinaryTree<double>}}(type);}
+\DoxyCodeLine{00020     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}String"{}}) \{}
+\DoxyCodeLine{00021         tree = \textcolor{keyword}{new} \mbox{\hyperlink{classBinaryTree}{BinaryTree<std::string>}}(type);}
+\DoxyCodeLine{00022     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00023         std::cout << \textcolor{stringliteral}{"{}invalid tree type!\(\backslash\)n"{}};}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00025     \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// reading commands from the user}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     std::string line;}
+\DoxyCodeLine{00030     std::cin.ignore(1, \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00031     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00032         }
+\DoxyCodeLine{00033         \textcolor{comment}{// reading input}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         std::cout << \textcolor{stringliteral}{"{}enter a command (insert [value], search [value], delete [value], draw, quit): "{}};}
+\DoxyCodeLine{00036         std::getline(std::cin, line);}
+\DoxyCodeLine{00037         std::stringstream ss(line);}
+\DoxyCodeLine{00038         std::string word;}
+\DoxyCodeLine{00039         ss >> word;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{comment}{// processing the command}}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00044             \textcolor{keywordflow}{if} (word == \textcolor{stringliteral}{"{}insert"{}}) \{}
+\DoxyCodeLine{00045                 ss >> word;}
+\DoxyCodeLine{00046                 \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Integer"{}}) \{}
+\DoxyCodeLine{00047                     (\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<int>}}*\textcolor{keyword}{>}(tree))-\/>insert(std::stoi(word));}
+\DoxyCodeLine{00048                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Double"{}}) \{}
+\DoxyCodeLine{00049                     (\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<double>}}*\textcolor{keyword}{>}(tree))-\/>insert(std::stod(word));}
+\DoxyCodeLine{00050                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00051                     (\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<std::string>}}*\textcolor{keyword}{>}(tree))-\/>insert(word);}
+\DoxyCodeLine{00052                 \}}
+\DoxyCodeLine{00053                 tree-\/>\mbox{\hyperlink{classBinaryTreePtr_a4ea88a0ce38ba7c6ef75c48dca2e4102}{draw}}();}
+\DoxyCodeLine{00054             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (word == \textcolor{stringliteral}{"{}search"{}}) \{}
+\DoxyCodeLine{00055                 ss >> word;}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Integer"{}}) \{}
+\DoxyCodeLine{00057                     \textcolor{keywordflow}{if} ((\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<int>}}*\textcolor{keyword}{>}(tree))-\/>search(std::stoi(word)) != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00058                         std::cout << \textcolor{stringliteral}{"{}found!\(\backslash\)n"{}};}
+\DoxyCodeLine{00059                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00060                         std::cout << \textcolor{stringliteral}{"{}not found...\(\backslash\)n"{}};}
+\DoxyCodeLine{00061                     \}}
+\DoxyCodeLine{00062                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Double"{}}) \{}
+\DoxyCodeLine{00063                     \textcolor{keywordflow}{if} ((\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<double>}}*\textcolor{keyword}{>}(tree))-\/>search(std::stod(word)) != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00064                         std::cout << \textcolor{stringliteral}{"{}found!\(\backslash\)n"{}};}
+\DoxyCodeLine{00065                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00066                         std::cout << \textcolor{stringliteral}{"{}not found...\(\backslash\)n"{}};}
+\DoxyCodeLine{00067                     \}}
+\DoxyCodeLine{00068                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00069                     \textcolor{keywordflow}{if} ((\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<std::string>}}*\textcolor{keyword}{>}(tree))-\/>search(word) != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00070                         std::cout << \textcolor{stringliteral}{"{}found!\(\backslash\)n"{}};}
+\DoxyCodeLine{00071                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00072                         std::cout << \textcolor{stringliteral}{"{}not found...\(\backslash\)n"{}};}
+\DoxyCodeLine{00073                     \}}
+\DoxyCodeLine{00074                 \}}
+\DoxyCodeLine{00075             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (word == \textcolor{stringliteral}{"{}delete"{}}) \{}
+\DoxyCodeLine{00076                 ss >> word;}
+\DoxyCodeLine{00077                 \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Integer"{}}) \{}
+\DoxyCodeLine{00078                     (\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<int>}}*\textcolor{keyword}{>}(tree))-\/>delete\_node(std::stoi(word));}
+\DoxyCodeLine{00079                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}Double"{}}) \{}
+\DoxyCodeLine{00080                     (\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<double>}}*\textcolor{keyword}{>}(tree))-\/>delete\_node(std::stod(word));}
+\DoxyCodeLine{00081                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00082                     (\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classBinaryTree}{BinaryTree<std::string>}}*\textcolor{keyword}{>}(tree))-\/>delete\_node(word);}
+\DoxyCodeLine{00083                 \}}
+\DoxyCodeLine{00084                 tree-\/>\mbox{\hyperlink{classBinaryTreePtr_a4ea88a0ce38ba7c6ef75c48dca2e4102}{draw}}();}
+\DoxyCodeLine{00085             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (word == \textcolor{stringliteral}{"{}draw"{}}) \{}
+\DoxyCodeLine{00086                 tree-\/>\mbox{\hyperlink{classBinaryTreePtr_a4ea88a0ce38ba7c6ef75c48dca2e4102}{draw}}();}
+\DoxyCodeLine{00087             \}}
+\DoxyCodeLine{00088         \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::invalid\_argument\& e) \{}
+\DoxyCodeLine{00089             std::cout << \textcolor{stringliteral}{"{}invalid argument!\(\backslash\)n"{}};}
+\DoxyCodeLine{00090         \}}
+\DoxyCodeLine{00091     \} \textcolor{keywordflow}{while} (line != \textcolor{stringliteral}{"{}quit"{}});}
+\DoxyCodeLine{00092 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,24 @@
+\hypertarget{RNG_8java_source}{}\doxysection{RNG.\+java}
+\mbox{\hyperlink{RNG_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00001}00001 \textcolor{keyword}{import} java.util.Random;}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00007}\mbox{\hyperlink{classRNG}{00007}} \textcolor{keyword}{final} \textcolor{keyword}{class }\mbox{\hyperlink{classRNG}{RNG}} \{}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00009}\mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{00009}}     \textcolor{keyword}{static} \textcolor{keyword}{private} \textcolor{keywordtype}{double} \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}};}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00011}\mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{00011}}     \textcolor{keyword}{static} \textcolor{keyword}{private} \textcolor{keyword}{final} Random \mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}} = \textcolor{keyword}{new} Random();}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00013}\mbox{\hyperlink{classRNG_ac0e29c8cb7243b89c81185e601566fe9}{00013}}     \textcolor{keyword}{private} \mbox{\hyperlink{classRNG_ac0e29c8cb7243b89c81185e601566fe9}{RNG}}()\{\}}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00015}\mbox{\hyperlink{classRNG_a1da20d91aa47fa7f4c2cf16e40224956}{00015}}     \textcolor{keyword}{static} \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRNG_a1da20d91aa47fa7f4c2cf16e40224956}{initialise}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}}) \{}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00016}00016         \mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}} = \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}};}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00017}00017     \}}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00021}\mbox{\hyperlink{classRNG_a3bd488d2c6e575a211819d61cadc176c}{00021}}     \textcolor{keyword}{static} \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{classRNG_a3bd488d2c6e575a211819d61cadc176c}{randomHue}}() \{}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00022}00022         \textcolor{keywordflow}{return} \mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}}.nextDouble() * 360;}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00023}00023     \}}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00027}\mbox{\hyperlink{classRNG_a9486cf43ea9add2f25ceda793133dc7b}{00027}}     \textcolor{keyword}{static} \textcolor{keyword}{public} \textcolor{keywordtype}{long} \mbox{\hyperlink{classRNG_a9486cf43ea9add2f25ceda793133dc7b}{randomDelay}}() \{}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00028}00028         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{long}) ((\mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}}.nextDouble() + 0.5) * \mbox{\hyperlink{classRNG_ac91ee3c4c4b3130c37e8f1c006882bd7}{k}});}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00033}\mbox{\hyperlink{classRNG_ad8e17cbbc05a149e98f541f5c223ea1d}{00033}}     \textcolor{keyword}{static} \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{classRNG_ad8e17cbbc05a149e98f541f5c223ea1d}{randomProbability}}() \{}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00034}00034         \textcolor{keywordflow}{return} \mbox{\hyperlink{classRNG_a4821fbf96fb2d8c1eb3cc7e935bd7431}{generator}}.nextDouble();}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{RNG_8java_source_l00036}00036 \}}
+
+\end{DoxyCode}

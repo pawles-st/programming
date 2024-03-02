@@ -1,0 +1,62 @@
+\hypertarget{classDynamicRectangle_1_1RectanglePressedEventHandler}{}\doxysection{Dynamic\+Rectangle.\+Rectangle\+Pressed\+Event\+Handler Class Reference}
+\label{classDynamicRectangle_1_1RectanglePressedEventHandler}\index{DynamicRectangle.RectanglePressedEventHandler@{DynamicRectangle.RectanglePressedEventHandler}}
+Inheritance diagram for Dynamic\+Rectangle.\+Rectangle\+Pressed\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicRectangle_1_1RectanglePressedEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicRectangle_1_1RectanglePressedEventHandler_a205099db4131e926206775ef0115eacd}{handle}} (Mouse\+Event me)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with pressing on the rectangle 
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00047}{47}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_1_1RectanglePressedEventHandler_a205099db4131e926206775ef0115eacd}\label{classDynamicRectangle_1_1RectanglePressedEventHandler_a205099db4131e926206775ef0115eacd}} 
+\index{DynamicRectangle.RectanglePressedEventHandler@{DynamicRectangle.RectanglePressedEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicRectangle.RectanglePressedEventHandler@{DynamicRectangle.RectanglePressedEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Rectangle.\+Rectangle\+Pressed\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{me }\end{DoxyParamCaption})}
+
+Method that deals with the pressing event 
+\begin{DoxyParams}{Parameters}
+{\em me} & Event that caused the pressing event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00052}{52}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052                                           \{}
+\DoxyCodeLine{00053             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} == \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{00054                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00055             \}}
+\DoxyCodeLine{00056             Point2D pointHit = \textcolor{keyword}{new} Point2D(me.getX(), me.getY());}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classDynamicRectangle_adfd4bb7d3dde8aa221493c03e13bfdf2}{isSelected}}) \{}
+\DoxyCodeLine{00058                 \mbox{\hyperlink{classDynamicRectangle_adfd4bb7d3dde8aa221493c03e13bfdf2}{isSelected}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00059                 setStroke(Color.BLACK);}
+\DoxyCodeLine{00060                 setStrokeWidth(1.0);}
+\DoxyCodeLine{00061             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00062                 \mbox{\hyperlink{classDynamicRectangle_adfd4bb7d3dde8aa221493c03e13bfdf2}{isSelected}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00063                 setStroke(Color.YELLOW);}
+\DoxyCodeLine{00064                 setStrokeWidth(2.5);}
+\DoxyCodeLine{00065             \}}
+\DoxyCodeLine{00066         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicRectangle_8java}{Dynamic\+Rectangle.\+java}}\end{DoxyCompactItemize}

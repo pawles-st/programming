@@ -1,0 +1,38 @@
+\hypertarget{ButtonEventHandler_8java_source}{}\doxysection{Button\+Event\+Handler.\+java}
+\mbox{\hyperlink{ButtonEventHandler_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00001}00001 \textcolor{keyword}{import} javafx.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00002}00002 \textcolor{keyword}{import} javafx.event.EventHandler;}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00003}00003 \textcolor{keyword}{import} javafx.scene.control.Button;}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00004}00004 \textcolor{keyword}{import} javafx.scene.layout.Pane;}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00010}\mbox{\hyperlink{classButtonEventHandler}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classButtonEventHandler}{ButtonEventHandler}} \textcolor{keyword}{implements} EventHandler<ActionEvent> \{}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00012}\mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{00012}}     \textcolor{keyword}{private} \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}} \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00014}\mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{00014}}     \textcolor{keyword}{private} Pane \mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{canvas}};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00019}\mbox{\hyperlink{classButtonEventHandler_a416fa1567a5ea6f1eb87a0f965e86921}{00019}}     \textcolor{keyword}{public} \mbox{\hyperlink{classButtonEventHandler_a416fa1567a5ea6f1eb87a0f965e86921}{ButtonEventHandler}}(\mbox{\hyperlink{classStateActionWrap}{StateActionWrap}} \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}, Pane \mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{canvas}}) \{}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00020}00020         this.stateWrap = \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00021}00021         this.canvas = \mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{canvas}};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00026}00026     @Override}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00027}\mbox{\hyperlink{classButtonEventHandler_a7ce8055133f132fbf38b5cefecd2bbb3}{00027}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classButtonEventHandler_a7ce8055133f132fbf38b5cefecd2bbb3}{handle}}(ActionEvent ae) \{}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00028}00028         Button aeSource = (Button) ae.getSource();}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00029}00029         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}select"{}})) \{}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00030}00030             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classSelectShape}{SelectShape}}();}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00031}00031             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00033}00033         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}circle"{}})) \{}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00034}00034             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classDrawCircle}{DrawCircle}}();}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00035}00035             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00036}00036         \}}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00037}00037         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}rectangle"{}})) \{}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00038}00038             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classDrawRectangle}{DrawRectangle}}();}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00039}00039             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00040}00040         \}}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00041}00041         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}triangle"{}})) \{}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00042}00042             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classDrawTriangle}{DrawTriangle}}();}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00043}00043             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00044}00044         \}}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{ButtonEventHandler_8java_source_l00046}00046 \}}
+
+\end{DoxyCode}

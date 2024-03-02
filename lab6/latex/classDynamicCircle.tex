@@ -1,0 +1,105 @@
+\hypertarget{classDynamicCircle}{}\doxysection{Dynamic\+Circle Class Reference}
+\label{classDynamicCircle}\index{DynamicCircle@{DynamicCircle}}
+Inheritance diagram for Dynamic\+Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicCircle}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDynamicCircle_1_1CircleContextEventHandler}{Circle\+Context\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicCircle_1_1CircleDraggedEventHandler}{Circle\+Dragged\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicCircle_1_1CirclePressedEventHandler}{Circle\+Pressed\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicCircle_1_1CircleRotateEventHandler}{Circle\+Rotate\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicCircle_1_1CircleScrolledEventHandler}{Circle\+Scrolled\+Event\+Handler}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicCircle_a30361f41cae1e9aeedcd89273cb0cf07}{Dynamic\+Circle}} (Point2D origin, Point2D end\+Point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classDynamicCircle_a58d1f1a79f47d1e4aa6a92083291d8ed}{is\+Selected}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class for the circle drawn \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00020}{20}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamicCircle_a30361f41cae1e9aeedcd89273cb0cf07}\label{classDynamicCircle_a30361f41cae1e9aeedcd89273cb0cf07}} 
+\index{DynamicCircle@{DynamicCircle}!DynamicCircle@{DynamicCircle}}
+\index{DynamicCircle@{DynamicCircle}!DynamicCircle@{DynamicCircle}}
+\doxysubsubsection{\texorpdfstring{DynamicCircle()}{DynamicCircle()}}
+{\footnotesize\ttfamily Dynamic\+Circle.\+Dynamic\+Circle (\begin{DoxyParamCaption}\item[{Point2D}]{origin,  }\item[{Point2D}]{end\+Point }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em origin} & Center of the circle \\
+\hline
+{\em end\+Point} & The second point to calculate the radius \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00027}{27}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027                                                            \{}
+\DoxyCodeLine{00028         super(origin.getX(), origin.getY(), origin.distance(endPoint));}
+\DoxyCodeLine{00029         setOnMousePressed(\textcolor{keyword}{new} CirclePressedEventHandler());}
+\DoxyCodeLine{00030         setOnMouseDragged(\textcolor{keyword}{new} CircleDraggedEventHandler());}
+\DoxyCodeLine{00031         setOnScroll(\textcolor{keyword}{new} CircleScrolledEventHandler());}
+\DoxyCodeLine{00032         ContextMenu shapeMenu = \textcolor{keyword}{new} ContextMenu();}
+\DoxyCodeLine{00033         ColorPicker shapeFill = \textcolor{keyword}{new} ColorPicker();}
+\DoxyCodeLine{00034         MenuItem fillItem = \textcolor{keyword}{new} MenuItem(\textcolor{keyword}{null}, shapeFill);}
+\DoxyCodeLine{00035         fillItem.setOnAction(\textcolor{keyword}{new} EventHandler<ActionEvent>() \{}
+\DoxyCodeLine{00036             @Override}
+\DoxyCodeLine{00037             \textcolor{keyword}{public} \textcolor{keywordtype}{void} handle(ActionEvent ae) \{}
+\DoxyCodeLine{00038                 setFill(shapeFill.getValue());}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040         \});}
+\DoxyCodeLine{00041         setOnContextMenuRequested(\textcolor{keyword}{new} CircleContextEventHandler(shapeMenu));}
+\DoxyCodeLine{00042         MenuItem rotateItem = \textcolor{keyword}{new} MenuItem(\textcolor{stringliteral}{"{}Rotate"{}});}
+\DoxyCodeLine{00043         rotateItem.setOnAction(\textcolor{keyword}{new} CircleRotateEventHandler());}
+\DoxyCodeLine{00044         shapeMenu.getItems().addAll(fillItem, rotateItem);}
+\DoxyCodeLine{00045     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDynamicCircle_a58d1f1a79f47d1e4aa6a92083291d8ed}\label{classDynamicCircle_a58d1f1a79f47d1e4aa6a92083291d8ed}} 
+\index{DynamicCircle@{DynamicCircle}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!DynamicCircle@{DynamicCircle}}
+\doxysubsubsection{\texorpdfstring{isSelected}{isSelected}}
+{\footnotesize\ttfamily boolean Dynamic\+Circle.\+is\+Selected = false\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that stores whether the shape is currently selected 
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00022}{22}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicCircle_8java}{Dynamic\+Circle.\+java}}\end{DoxyCompactItemize}

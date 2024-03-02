@@ -1,0 +1,99 @@
+\hypertarget{classMenuInfoEventHandler}{}\doxysection{Menu\+Info\+Event\+Handler Class Reference}
+\label{classMenuInfoEventHandler}\index{MenuInfoEventHandler@{MenuInfoEventHandler}}
+Inheritance diagram for Menu\+Info\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMenuInfoEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMenuInfoEventHandler_a3a094808674db66fcd787065fe23a2b2}{Menu\+Info\+Event\+Handler}} (Dialog$<$ String $>$ \mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialog\+Window}})
+\item 
+void \mbox{\hyperlink{classMenuInfoEventHandler_af5524d36f45411a7e3dcf673097d597a}{handle}} (Action\+Event ae)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dialog$<$ String $>$ \mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialog\+Window}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class that deals with the \char`\"{}info\char`\"{} dialog window \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{MenuInfoEventHandler_8java_source_l00009}{9}} of file \mbox{\hyperlink{MenuInfoEventHandler_8java_source}{Menu\+Info\+Event\+Handler.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMenuInfoEventHandler_a3a094808674db66fcd787065fe23a2b2}\label{classMenuInfoEventHandler_a3a094808674db66fcd787065fe23a2b2}} 
+\index{MenuInfoEventHandler@{MenuInfoEventHandler}!MenuInfoEventHandler@{MenuInfoEventHandler}}
+\index{MenuInfoEventHandler@{MenuInfoEventHandler}!MenuInfoEventHandler@{MenuInfoEventHandler}}
+\doxysubsubsection{\texorpdfstring{MenuInfoEventHandler()}{MenuInfoEventHandler()}}
+{\footnotesize\ttfamily Menu\+Info\+Event\+Handler.\+Menu\+Info\+Event\+Handler (\begin{DoxyParamCaption}\item[{Dialog$<$ String $>$}]{dialog\+Window }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em dialog\+Window} & the dialog window to handle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{MenuInfoEventHandler_8java_source_l00015}{15}} of file \mbox{\hyperlink{MenuInfoEventHandler_8java_source}{Menu\+Info\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                                                              \{}
+\DoxyCodeLine{00016         this.\mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialogWindow}} = \mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialogWindow}};}
+\DoxyCodeLine{00017     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenuInfoEventHandler_af5524d36f45411a7e3dcf673097d597a}\label{classMenuInfoEventHandler_af5524d36f45411a7e3dcf673097d597a}} 
+\index{MenuInfoEventHandler@{MenuInfoEventHandler}!handle@{handle}}
+\index{handle@{handle}!MenuInfoEventHandler@{MenuInfoEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Menu\+Info\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Action\+Event}]{ae }\end{DoxyParamCaption})}
+
+Method that deals with showing the window 
+
+Definition at line \mbox{\hyperlink{MenuInfoEventHandler_8java_source_l00020}{20}} of file \mbox{\hyperlink{MenuInfoEventHandler_8java_source}{Menu\+Info\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020                                        \{}
+\DoxyCodeLine{00021         \mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialogWindow}}.setTitle(\textcolor{stringliteral}{"{}Info"{}});}
+\DoxyCodeLine{00022         \mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialogWindow}}.setHeaderText(\textcolor{stringliteral}{"{}\(\backslash\)"{}Graphic Editor\(\backslash\)"{} by Paweł Leśniak"{}});}
+\DoxyCodeLine{00023         \mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialogWindow}}.setContentText(\textcolor{stringliteral}{"{}A simple graphic editor made for drawing shapes"{}});}
+\DoxyCodeLine{00024         \mbox{\hyperlink{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}{dialogWindow}}.showAndWait();}
+\DoxyCodeLine{00025     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}\label{classMenuInfoEventHandler_aa4d2d1fff5c558a516e92dd3147681e7}} 
+\index{MenuInfoEventHandler@{MenuInfoEventHandler}!dialogWindow@{dialogWindow}}
+\index{dialogWindow@{dialogWindow}!MenuInfoEventHandler@{MenuInfoEventHandler}}
+\doxysubsubsection{\texorpdfstring{dialogWindow}{dialogWindow}}
+{\footnotesize\ttfamily Dialog$<$String$>$ Menu\+Info\+Event\+Handler.\+dialog\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that holds the dialog window 
+
+Definition at line \mbox{\hyperlink{MenuInfoEventHandler_8java_source_l00011}{11}} of file \mbox{\hyperlink{MenuInfoEventHandler_8java_source}{Menu\+Info\+Event\+Handler.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MenuInfoEventHandler_8java}{Menu\+Info\+Event\+Handler.\+java}}\end{DoxyCompactItemize}

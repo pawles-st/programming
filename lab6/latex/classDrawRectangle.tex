@@ -1,0 +1,93 @@
+\hypertarget{classDrawRectangle}{}\doxysection{Draw\+Rectangle Class Reference}
+\label{classDrawRectangle}\index{DrawRectangle@{DrawRectangle}}
+Inheritance diagram for Draw\+Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDrawRectangle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrawRectangle_a4e2fc6cf40f695becd359a90d74d4b81}{Draw\+Rectangle}} ()
+\item 
+void \mbox{\hyperlink{classDrawRectangle_a96646d0051a8900174e178e87bab8ea4}{action}} (Mouse\+Event me, Pane canvas)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The class that deals with drawing rectangles \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{StateActionWrap_8java_source_l00064}{64}} of file \mbox{\hyperlink{StateActionWrap_8java_source}{State\+Action\+Wrap.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDrawRectangle_a4e2fc6cf40f695becd359a90d74d4b81}\label{classDrawRectangle_a4e2fc6cf40f695becd359a90d74d4b81}} 
+\index{DrawRectangle@{DrawRectangle}!DrawRectangle@{DrawRectangle}}
+\index{DrawRectangle@{DrawRectangle}!DrawRectangle@{DrawRectangle}}
+\doxysubsubsection{\texorpdfstring{DrawRectangle()}{DrawRectangle()}}
+{\footnotesize\ttfamily Draw\+Rectangle.\+Draw\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main constructor 
+
+Definition at line \mbox{\hyperlink{StateActionWrap_8java_source_l00066}{66}} of file \mbox{\hyperlink{StateActionWrap_8java_source}{State\+Action\+Wrap.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066                            \{}
+\DoxyCodeLine{00067         \mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}} = \textcolor{keyword}{new} Point2D[2];}
+\DoxyCodeLine{00068         \mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}} = 0;}
+\DoxyCodeLine{00069     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDrawRectangle_a96646d0051a8900174e178e87bab8ea4}\label{classDrawRectangle_a96646d0051a8900174e178e87bab8ea4}} 
+\index{DrawRectangle@{DrawRectangle}!action@{action}}
+\index{action@{action}!DrawRectangle@{DrawRectangle}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily void Draw\+Rectangle.\+action (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{me,  }\item[{Pane}]{canvas }\end{DoxyParamCaption})}
+
+Method that deals with mouse pressing on the canvas 
+\begin{DoxyParams}{Parameters}
+{\em me} & Mouse event that caused the action \\
+\hline
+{\em canvas} & The canvas to draw on \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classStateAction_a05b214656103f5a0463b4fbdc3611d10}{State\+Action}}.
+
+
+
+Definition at line \mbox{\hyperlink{StateActionWrap_8java_source_l00074}{74}} of file \mbox{\hyperlink{StateActionWrap_8java_source}{State\+Action\+Wrap.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074                                                    \{}
+\DoxyCodeLine{00075         \mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}[\mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}}] = \textcolor{keyword}{new} Point2D(me.getX(), me.getY());}
+\DoxyCodeLine{00076         ++\mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}};}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}} == 2) \{}
+\DoxyCodeLine{00078             \mbox{\hyperlink{classDynamicRectangle}{DynamicRectangle}} dr = \textcolor{keyword}{new} \mbox{\hyperlink{classDynamicRectangle}{DynamicRectangle}}(\mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}[0], \mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}[1]);}
+\DoxyCodeLine{00079             canvas.getChildren().add(dr);}
+\DoxyCodeLine{00080             Arrays.fill(\mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00081             \mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}} = 0;}
+\DoxyCodeLine{00082         \}}
+\DoxyCodeLine{00083     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{StateActionWrap_8java}{State\+Action\+Wrap.\+java}}\end{DoxyCompactItemize}

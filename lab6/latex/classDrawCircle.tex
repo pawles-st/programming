@@ -1,0 +1,93 @@
+\hypertarget{classDrawCircle}{}\doxysection{Draw\+Circle Class Reference}
+\label{classDrawCircle}\index{DrawCircle@{DrawCircle}}
+Inheritance diagram for Draw\+Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDrawCircle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrawCircle_af891e3b7eb53d79f17b202d812769e5f}{Draw\+Circle}} ()
+\item 
+void \mbox{\hyperlink{classDrawCircle_a4743ce0362d3a8d9ef960471d232bc86}{action}} (Mouse\+Event me, Pane canvas)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The class that deals with drawing circles \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{StateActionWrap_8java_source_l00038}{38}} of file \mbox{\hyperlink{StateActionWrap_8java_source}{State\+Action\+Wrap.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDrawCircle_af891e3b7eb53d79f17b202d812769e5f}\label{classDrawCircle_af891e3b7eb53d79f17b202d812769e5f}} 
+\index{DrawCircle@{DrawCircle}!DrawCircle@{DrawCircle}}
+\index{DrawCircle@{DrawCircle}!DrawCircle@{DrawCircle}}
+\doxysubsubsection{\texorpdfstring{DrawCircle()}{DrawCircle()}}
+{\footnotesize\ttfamily Draw\+Circle.\+Draw\+Circle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main constructor 
+
+Definition at line \mbox{\hyperlink{StateActionWrap_8java_source_l00040}{40}} of file \mbox{\hyperlink{StateActionWrap_8java_source}{State\+Action\+Wrap.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040                         \{}
+\DoxyCodeLine{00041         \mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}} = \textcolor{keyword}{new} Point2D[2];}
+\DoxyCodeLine{00042         \mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}} = 0;}
+\DoxyCodeLine{00043     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDrawCircle_a4743ce0362d3a8d9ef960471d232bc86}\label{classDrawCircle_a4743ce0362d3a8d9ef960471d232bc86}} 
+\index{DrawCircle@{DrawCircle}!action@{action}}
+\index{action@{action}!DrawCircle@{DrawCircle}}
+\doxysubsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily void Draw\+Circle.\+action (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{me,  }\item[{Pane}]{canvas }\end{DoxyParamCaption})}
+
+Method that deals with mouse pressing on the canvas 
+\begin{DoxyParams}{Parameters}
+{\em me} & Mouse event that caused the action \\
+\hline
+{\em canvas} & The canvas to draw on \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classStateAction_a05b214656103f5a0463b4fbdc3611d10}{State\+Action}}.
+
+
+
+Definition at line \mbox{\hyperlink{StateActionWrap_8java_source_l00048}{48}} of file \mbox{\hyperlink{StateActionWrap_8java_source}{State\+Action\+Wrap.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048                                                    \{}
+\DoxyCodeLine{00049         \mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}[\mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}}] = \textcolor{keyword}{new} Point2D(me.getX(), me.getY());}
+\DoxyCodeLine{00050         ++\mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}};}
+\DoxyCodeLine{00051         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}} == 2) \{}
+\DoxyCodeLine{00052             \mbox{\hyperlink{classDynamicCircle}{DynamicCircle}} dc = \textcolor{keyword}{new} \mbox{\hyperlink{classDynamicCircle}{DynamicCircle}}(\mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}[0], \mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}[1]);}
+\DoxyCodeLine{00053             canvas.getChildren().add(dc);}
+\DoxyCodeLine{00054             Arrays.fill(\mbox{\hyperlink{classStateAction_a3d1928190b75a5e3e07e137c02d32d68}{points}}, \textcolor{keyword}{null});}
+\DoxyCodeLine{00055             \mbox{\hyperlink{classStateAction_a45c24c19f25c9666e2f27cbef0fb7a02}{pointNumber}} = 0;}
+\DoxyCodeLine{00056         \}}
+\DoxyCodeLine{00057     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{StateActionWrap_8java}{State\+Action\+Wrap.\+java}}\end{DoxyCompactItemize}

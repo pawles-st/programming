@@ -1,0 +1,131 @@
+\hypertarget{classDynamicTriangle}{}\doxysection{Dynamic\+Triangle Class Reference}
+\label{classDynamicTriangle}\index{DynamicTriangle@{DynamicTriangle}}
+Inheritance diagram for Dynamic\+Triangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicTriangle}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler}{Triangle\+Context\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicTriangle_1_1TriangleDraggedEventHandler}{Triangle\+Dragged\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicTriangle_1_1TrianglePressedEventHandler}{Triangle\+Pressed\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicTriangle_1_1TriangleRotateEventHandler}{Triangle\+Rotate\+Event\+Handler}}
+\item 
+class \mbox{\hyperlink{classDynamicTriangle_1_1TriangleScrolledEventHandler}{Triangle\+Scrolled\+Event\+Handler}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicTriangle_a36adebf4647d49b7e2362eedd2b63df4}{Dynamic\+Triangle}} (Point2D p1, Point2D p2, Point2D p3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classDynamicTriangle_af91f961a4038c6f15aee0bb722c6b1e8}{pressX}}
+\item 
+double \mbox{\hyperlink{classDynamicTriangle_a7e499fd7c452dfa621e5c80e8bd817f8}{pressY}}
+\item 
+boolean \mbox{\hyperlink{classDynamicTriangle_a540cd1e2e2e00c980b27f29b17d1293b}{is\+Selected}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class for the triangle drawn \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00021}{21}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_a36adebf4647d49b7e2362eedd2b63df4}\label{classDynamicTriangle_a36adebf4647d49b7e2362eedd2b63df4}} 
+\index{DynamicTriangle@{DynamicTriangle}!DynamicTriangle@{DynamicTriangle}}
+\index{DynamicTriangle@{DynamicTriangle}!DynamicTriangle@{DynamicTriangle}}
+\doxysubsubsection{\texorpdfstring{DynamicTriangle()}{DynamicTriangle()}}
+{\footnotesize\ttfamily Dynamic\+Triangle.\+Dynamic\+Triangle (\begin{DoxyParamCaption}\item[{Point2D}]{p1,  }\item[{Point2D}]{p2,  }\item[{Point2D}]{p3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Moin constructor 
+\begin{DoxyParams}{Parameters}
+{\em p1} & First point \\
+\hline
+{\em p2} & Second point \\
+\hline
+{\em p3} & Third point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00033}{33}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033                                                         \{}
+\DoxyCodeLine{00034         super(p1.getX(), p1.getY(), p2.getX(), p2.getY(), p3.getX(), p3.getY());}
+\DoxyCodeLine{00035         setOnMousePressed(\textcolor{keyword}{new} TrianglePressedEventHandler());}
+\DoxyCodeLine{00036         setOnMouseDragged(\textcolor{keyword}{new} TriangleDraggedEventHandler());}
+\DoxyCodeLine{00037         setOnScroll(\textcolor{keyword}{new} TriangleScrolledEventHandler());}
+\DoxyCodeLine{00038         ContextMenu shapeMenu = \textcolor{keyword}{new} ContextMenu();}
+\DoxyCodeLine{00039         ColorPicker shapeFill = \textcolor{keyword}{new} ColorPicker();}
+\DoxyCodeLine{00040         MenuItem fillItem = \textcolor{keyword}{new} MenuItem(\textcolor{keyword}{null}, shapeFill);}
+\DoxyCodeLine{00041         fillItem.setOnAction(\textcolor{keyword}{new} EventHandler<ActionEvent>() \{}
+\DoxyCodeLine{00042             @Override}
+\DoxyCodeLine{00043             \textcolor{keyword}{public} \textcolor{keywordtype}{void} handle(ActionEvent ae) \{}
+\DoxyCodeLine{00044                 setFill(shapeFill.getValue());}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046         \});}
+\DoxyCodeLine{00047         setOnContextMenuRequested(\textcolor{keyword}{new} TriangleContextEventHandler(shapeMenu));}
+\DoxyCodeLine{00048         MenuItem rotateItem = \textcolor{keyword}{new} MenuItem(\textcolor{stringliteral}{"{}Rotate"{}});}
+\DoxyCodeLine{00049         rotateItem.setOnAction(\textcolor{keyword}{new} TriangleRotateEventHandler());}
+\DoxyCodeLine{00050         shapeMenu.getItems().addAll(fillItem, rotateItem);}
+\DoxyCodeLine{00051     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_a540cd1e2e2e00c980b27f29b17d1293b}\label{classDynamicTriangle_a540cd1e2e2e00c980b27f29b17d1293b}} 
+\index{DynamicTriangle@{DynamicTriangle}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!DynamicTriangle@{DynamicTriangle}}
+\doxysubsubsection{\texorpdfstring{isSelected}{isSelected}}
+{\footnotesize\ttfamily boolean Dynamic\+Triangle.\+is\+Selected = false\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that stores whether the shape is currently selected 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00027}{27}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+\mbox{\Hypertarget{classDynamicTriangle_af91f961a4038c6f15aee0bb722c6b1e8}\label{classDynamicTriangle_af91f961a4038c6f15aee0bb722c6b1e8}} 
+\index{DynamicTriangle@{DynamicTriangle}!pressX@{pressX}}
+\index{pressX@{pressX}!DynamicTriangle@{DynamicTriangle}}
+\doxysubsubsection{\texorpdfstring{pressX}{pressX}}
+{\footnotesize\ttfamily double Dynamic\+Triangle.\+pressX\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that stores the last X position pressed on 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00023}{23}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+\mbox{\Hypertarget{classDynamicTriangle_a7e499fd7c452dfa621e5c80e8bd817f8}\label{classDynamicTriangle_a7e499fd7c452dfa621e5c80e8bd817f8}} 
+\index{DynamicTriangle@{DynamicTriangle}!pressY@{pressY}}
+\index{pressY@{pressY}!DynamicTriangle@{DynamicTriangle}}
+\doxysubsubsection{\texorpdfstring{pressY}{pressY}}
+{\footnotesize\ttfamily double Dynamic\+Triangle.\+pressY\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that stores the last Y position pressed on 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00025}{25}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicTriangle_8java}{Dynamic\+Triangle.\+java}}\end{DoxyCompactItemize}

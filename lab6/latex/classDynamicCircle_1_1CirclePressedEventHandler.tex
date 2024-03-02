@@ -1,0 +1,61 @@
+\hypertarget{classDynamicCircle_1_1CirclePressedEventHandler}{}\doxysection{Dynamic\+Circle.\+Circle\+Pressed\+Event\+Handler Class Reference}
+\label{classDynamicCircle_1_1CirclePressedEventHandler}\index{DynamicCircle.CirclePressedEventHandler@{DynamicCircle.CirclePressedEventHandler}}
+Inheritance diagram for Dynamic\+Circle.\+Circle\+Pressed\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicCircle_1_1CirclePressedEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicCircle_1_1CirclePressedEventHandler_a062c0048172147bb2f639d41a0675d67}{handle}} (Mouse\+Event me)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with pressing on the circle 
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00047}{47}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicCircle_1_1CirclePressedEventHandler_a062c0048172147bb2f639d41a0675d67}\label{classDynamicCircle_1_1CirclePressedEventHandler_a062c0048172147bb2f639d41a0675d67}} 
+\index{DynamicCircle.CirclePressedEventHandler@{DynamicCircle.CirclePressedEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicCircle.CirclePressedEventHandler@{DynamicCircle.CirclePressedEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Circle.\+Circle\+Pressed\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{me }\end{DoxyParamCaption})}
+
+Method that deals with the pressing event 
+\begin{DoxyParams}{Parameters}
+{\em me} & Event that caused the pressing event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicCircle_8java_source_l00052}{52}} of file \mbox{\hyperlink{DynamicCircle_8java_source}{Dynamic\+Circle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052                                           \{}
+\DoxyCodeLine{00053             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} == \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{00054                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00055             \}}
+\DoxyCodeLine{00056             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classDynamicCircle_a58d1f1a79f47d1e4aa6a92083291d8ed}{isSelected}}) \{}
+\DoxyCodeLine{00057                 \mbox{\hyperlink{classDynamicCircle_a58d1f1a79f47d1e4aa6a92083291d8ed}{isSelected}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00058                 setStroke(Color.BLACK);}
+\DoxyCodeLine{00059                 setStrokeWidth(1.0);}
+\DoxyCodeLine{00060             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00061                 \mbox{\hyperlink{classDynamicCircle_a58d1f1a79f47d1e4aa6a92083291d8ed}{isSelected}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00062                 setStroke(Color.YELLOW);}
+\DoxyCodeLine{00063                 setStrokeWidth(2.5);}
+\DoxyCodeLine{00064             \}}
+\DoxyCodeLine{00065         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicCircle_8java}{Dynamic\+Circle.\+java}}\end{DoxyCompactItemize}

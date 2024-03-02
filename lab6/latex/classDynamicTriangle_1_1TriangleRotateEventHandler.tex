@@ -1,0 +1,73 @@
+\hypertarget{classDynamicTriangle_1_1TriangleRotateEventHandler}{}\doxysection{Dynamic\+Triangle.\+Triangle\+Rotate\+Event\+Handler Class Reference}
+\label{classDynamicTriangle_1_1TriangleRotateEventHandler}\index{DynamicTriangle.TriangleRotateEventHandler@{DynamicTriangle.TriangleRotateEventHandler}}
+Inheritance diagram for Dynamic\+Triangle.\+Triangle\+Rotate\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicTriangle_1_1TriangleRotateEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicTriangle_1_1TriangleRotateEventHandler_aea862439fcad40d7c5994c5bfa170c43}{handle}} (Action\+Event ae)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with rotating the triangle 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00145}{145}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_1_1TriangleRotateEventHandler_aea862439fcad40d7c5994c5bfa170c43}\label{classDynamicTriangle_1_1TriangleRotateEventHandler_aea862439fcad40d7c5994c5bfa170c43}} 
+\index{DynamicTriangle.TriangleRotateEventHandler@{DynamicTriangle.TriangleRotateEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicTriangle.TriangleRotateEventHandler@{DynamicTriangle.TriangleRotateEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Triangle.\+Triangle\+Rotate\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Action\+Event}]{ae }\end{DoxyParamCaption})}
+
+Method that deals with the rotation event 
+\begin{DoxyParams}{Parameters}
+{\em ae} & Event that caused the rotation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00150}{150}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150                                            \{}
+\DoxyCodeLine{00151             TextInputDialog rotateWindow = \textcolor{keyword}{new} TextInputDialog();}
+\DoxyCodeLine{00152             rotateWindow.setTitle(\textcolor{stringliteral}{"{}Rotation"{}});}
+\DoxyCodeLine{00153             rotateWindow.setContentText(\textcolor{stringliteral}{"{}Rotate by: "{}});}
+\DoxyCodeLine{00154             rotateWindow.showAndWait();}
+\DoxyCodeLine{00155             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00156                 \textcolor{keywordtype}{double} angle = Double.parseDouble(rotateWindow.getEditor().getText());}
+\DoxyCodeLine{00157                 ObservableList<Double> points = getPoints();}
+\DoxyCodeLine{00158                 \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{00159                 \textcolor{keywordtype}{double} sumX = 0;}
+\DoxyCodeLine{00160                 \textcolor{keywordtype}{double} sumY = 0;}
+\DoxyCodeLine{00161                 \textcolor{keywordflow}{for} (Double p : points) \{}
+\DoxyCodeLine{00162                     \textcolor{keywordflow}{if} (i \% 2 == 0) \{}
+\DoxyCodeLine{00163                         sumX += p;}
+\DoxyCodeLine{00164                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00165                         sumY += p;}
+\DoxyCodeLine{00166                     \}}
+\DoxyCodeLine{00167                     ++i;}
+\DoxyCodeLine{00168                 \}}
+\DoxyCodeLine{00169                 Rotate r = \textcolor{keyword}{new} Rotate();}
+\DoxyCodeLine{00170                 r.setAngle(angle);}
+\DoxyCodeLine{00171                 r.setPivotX(sumX/3);}
+\DoxyCodeLine{00172                 r.setPivotY(sumY/3);}
+\DoxyCodeLine{00173                 getTransforms().add(r);}
+\DoxyCodeLine{00174             \} \textcolor{keywordflow}{catch} (IllegalArgumentException e) \{\}}
+\DoxyCodeLine{00175         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicTriangle_8java}{Dynamic\+Triangle.\+java}}\end{DoxyCompactItemize}

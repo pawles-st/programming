@@ -1,0 +1,101 @@
+\hypertarget{classDynamicTriangle_1_1TriangleContextEventHandler}{}\doxysection{Dynamic\+Triangle.\+Triangle\+Context\+Event\+Handler Class Reference}
+\label{classDynamicTriangle_1_1TriangleContextEventHandler}\index{DynamicTriangle.TriangleContextEventHandler@{DynamicTriangle.TriangleContextEventHandler}}
+Inheritance diagram for Dynamic\+Triangle.\+Triangle\+Context\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicTriangle_1_1TriangleContextEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler_a3068d27dc9eea6f5edfec5f7345fdf19}{handle}} (Context\+Menu\+Event cme)
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler_a4c2382a9cd8003d0ba9e653b343000c2}{Triangle\+Context\+Event\+Handler}} (Context\+Menu \mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler_a04ed8723b1890f1154aaafb5aa474358}{shape\+Menu}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Context\+Menu \mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler_a04ed8723b1890f1154aaafb5aa474358}{shape\+Menu}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with showing the context menu on the triangle 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00124}{124}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_1_1TriangleContextEventHandler_a4c2382a9cd8003d0ba9e653b343000c2}\label{classDynamicTriangle_1_1TriangleContextEventHandler_a4c2382a9cd8003d0ba9e653b343000c2}} 
+\index{DynamicTriangle.TriangleContextEventHandler@{DynamicTriangle.TriangleContextEventHandler}!TriangleContextEventHandler@{TriangleContextEventHandler}}
+\index{TriangleContextEventHandler@{TriangleContextEventHandler}!DynamicTriangle.TriangleContextEventHandler@{DynamicTriangle.TriangleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{TriangleContextEventHandler()}{TriangleContextEventHandler()}}
+{\footnotesize\ttfamily Dynamic\+Triangle.\+Triangle\+Context\+Event\+Handler.\+Triangle\+Context\+Event\+Handler (\begin{DoxyParamCaption}\item[{Context\+Menu}]{shape\+Menu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em shape\+Menu} & The context menu to show \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00130}{130}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130                                                            \{}
+\DoxyCodeLine{00131             this.\mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler_a04ed8723b1890f1154aaafb5aa474358}{shapeMenu}} = \mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler_a04ed8723b1890f1154aaafb5aa474358}{shapeMenu}};}
+\DoxyCodeLine{00132         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_1_1TriangleContextEventHandler_a3068d27dc9eea6f5edfec5f7345fdf19}\label{classDynamicTriangle_1_1TriangleContextEventHandler_a3068d27dc9eea6f5edfec5f7345fdf19}} 
+\index{DynamicTriangle.TriangleContextEventHandler@{DynamicTriangle.TriangleContextEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicTriangle.TriangleContextEventHandler@{DynamicTriangle.TriangleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Triangle.\+Triangle\+Context\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Context\+Menu\+Event}]{cme }\end{DoxyParamCaption})}
+
+Method that deals with the conext menu event 
+\begin{DoxyParams}{Parameters}
+{\em cme} & Event that caused the context menu popup \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00137}{137}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00137                                                  \{}
+\DoxyCodeLine{00138             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} == \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{00139                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00140             \}}
+\DoxyCodeLine{00141             \mbox{\hyperlink{classDynamicTriangle_1_1TriangleContextEventHandler_a04ed8723b1890f1154aaafb5aa474358}{shapeMenu}}.show(\mbox{\hyperlink{classDynamicTriangle}{DynamicTriangle}}.this, cme.getScreenX(), cme.getScreenY());}
+\DoxyCodeLine{00142         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_1_1TriangleContextEventHandler_a04ed8723b1890f1154aaafb5aa474358}\label{classDynamicTriangle_1_1TriangleContextEventHandler_a04ed8723b1890f1154aaafb5aa474358}} 
+\index{DynamicTriangle.TriangleContextEventHandler@{DynamicTriangle.TriangleContextEventHandler}!shapeMenu@{shapeMenu}}
+\index{shapeMenu@{shapeMenu}!DynamicTriangle.TriangleContextEventHandler@{DynamicTriangle.TriangleContextEventHandler}}
+\doxysubsubsection{\texorpdfstring{shapeMenu}{shapeMenu}}
+{\footnotesize\ttfamily Context\+Menu Dynamic\+Triangle.\+Triangle\+Context\+Event\+Handler.\+shape\+Menu\hspace{0.3cm}{\ttfamily [package]}}
+
+Variable that holds the context menu 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00126}{126}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicTriangle_8java}{Dynamic\+Triangle.\+java}}\end{DoxyCompactItemize}

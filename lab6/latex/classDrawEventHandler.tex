@@ -1,0 +1,114 @@
+\hypertarget{classDrawEventHandler}{}\doxysection{Draw\+Event\+Handler Class Reference}
+\label{classDrawEventHandler}\index{DrawEventHandler@{DrawEventHandler}}
+Inheritance diagram for Draw\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDrawEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDrawEventHandler_ac585760a662cbb885b817f3289e2ae63}{handle}} (Mouse\+Event me)
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrawEventHandler_ac7e891019fa7aed4bf9088289c45f2e9}{Draw\+Event\+Handler}} (\mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}} \mbox{\hyperlink{classDrawEventHandler_a01ee244d54b160e526105bec579b49cb}{state\+Wrap}}, Pane \mbox{\hyperlink{classDrawEventHandler_a42cd262a925245171e9d327071b7901b}{canvas}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Pane \mbox{\hyperlink{classDrawEventHandler_a42cd262a925245171e9d327071b7901b}{canvas}}
+\item 
+\mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}} \mbox{\hyperlink{classDrawEventHandler_a01ee244d54b160e526105bec579b49cb}{state\+Wrap}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class that deals with pressing the mouse on the canvas \begin{DoxyAuthor}{Author}
+Paweł \+Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{DrawEventHandler_8java_source_l00009}{9}} of file \mbox{\hyperlink{DrawEventHandler_8java_source}{Draw\+Event\+Handler.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDrawEventHandler_ac7e891019fa7aed4bf9088289c45f2e9}\label{classDrawEventHandler_ac7e891019fa7aed4bf9088289c45f2e9}} 
+\index{DrawEventHandler@{DrawEventHandler}!DrawEventHandler@{DrawEventHandler}}
+\index{DrawEventHandler@{DrawEventHandler}!DrawEventHandler@{DrawEventHandler}}
+\doxysubsubsection{\texorpdfstring{DrawEventHandler()}{DrawEventHandler()}}
+{\footnotesize\ttfamily Draw\+Event\+Handler.\+Draw\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}}}]{state\+Wrap,  }\item[{Pane}]{canvas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em state\+Wrap} & current state \\
+\hline
+{\em canvas} & the canvas to draw on \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DrawEventHandler_8java_source_l00018}{18}} of file \mbox{\hyperlink{DrawEventHandler_8java_source}{Draw\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018                                                              \{}
+\DoxyCodeLine{00019         this.stateWrap = \mbox{\hyperlink{classDrawEventHandler_a01ee244d54b160e526105bec579b49cb}{stateWrap}};}
+\DoxyCodeLine{00020         this.\mbox{\hyperlink{classDrawEventHandler_a42cd262a925245171e9d327071b7901b}{canvas}} = \mbox{\hyperlink{classDrawEventHandler_a42cd262a925245171e9d327071b7901b}{canvas}};}
+\DoxyCodeLine{00021     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDrawEventHandler_ac585760a662cbb885b817f3289e2ae63}\label{classDrawEventHandler_ac585760a662cbb885b817f3289e2ae63}} 
+\index{DrawEventHandler@{DrawEventHandler}!handle@{handle}}
+\index{handle@{handle}!DrawEventHandler@{DrawEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Draw\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{me }\end{DoxyParamCaption})}
+
+Method that deals with pressing the mouse 
+
+Definition at line \mbox{\hyperlink{DrawEventHandler_8java_source_l00024}{24}} of file \mbox{\hyperlink{DrawEventHandler_8java_source}{Draw\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                        \{}
+\DoxyCodeLine{00025         \mbox{\hyperlink{classDrawEventHandler_a01ee244d54b160e526105bec579b49cb}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}}.\mbox{\hyperlink{classStateAction_a05b214656103f5a0463b4fbdc3611d10}{action}}(me, \mbox{\hyperlink{classDrawEventHandler_a42cd262a925245171e9d327071b7901b}{canvas}});}
+\DoxyCodeLine{00026     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDrawEventHandler_a42cd262a925245171e9d327071b7901b}\label{classDrawEventHandler_a42cd262a925245171e9d327071b7901b}} 
+\index{DrawEventHandler@{DrawEventHandler}!canvas@{canvas}}
+\index{canvas@{canvas}!DrawEventHandler@{DrawEventHandler}}
+\doxysubsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily Pane Draw\+Event\+Handler.\+canvas\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that holds the canvas to draw on 
+
+Definition at line \mbox{\hyperlink{DrawEventHandler_8java_source_l00011}{11}} of file \mbox{\hyperlink{DrawEventHandler_8java_source}{Draw\+Event\+Handler.\+java}}.
+
+\mbox{\Hypertarget{classDrawEventHandler_a01ee244d54b160e526105bec579b49cb}\label{classDrawEventHandler_a01ee244d54b160e526105bec579b49cb}} 
+\index{DrawEventHandler@{DrawEventHandler}!stateWrap@{stateWrap}}
+\index{stateWrap@{stateWrap}!DrawEventHandler@{DrawEventHandler}}
+\doxysubsubsection{\texorpdfstring{stateWrap}{stateWrap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}} Draw\+Event\+Handler.\+state\+Wrap\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that holds the current state 
+
+Definition at line \mbox{\hyperlink{DrawEventHandler_8java_source_l00013}{13}} of file \mbox{\hyperlink{DrawEventHandler_8java_source}{Draw\+Event\+Handler.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DrawEventHandler_8java}{Draw\+Event\+Handler.\+java}}\end{DoxyCompactItemize}

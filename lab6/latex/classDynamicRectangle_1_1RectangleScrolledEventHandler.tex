@@ -1,0 +1,60 @@
+\hypertarget{classDynamicRectangle_1_1RectangleScrolledEventHandler}{}\doxysection{Dynamic\+Rectangle.\+Rectangle\+Scrolled\+Event\+Handler Class Reference}
+\label{classDynamicRectangle_1_1RectangleScrolledEventHandler}\index{DynamicRectangle.RectangleScrolledEventHandler@{DynamicRectangle.RectangleScrolledEventHandler}}
+Inheritance diagram for Dynamic\+Rectangle.\+Rectangle\+Scrolled\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicRectangle_1_1RectangleScrolledEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicRectangle_1_1RectangleScrolledEventHandler_a9930868ce641bb2a28fe1f98e816d65b}{handle}} (Scroll\+Event se)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with scrolling on the rectangle 
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00082}{82}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicRectangle_1_1RectangleScrolledEventHandler_a9930868ce641bb2a28fe1f98e816d65b}\label{classDynamicRectangle_1_1RectangleScrolledEventHandler_a9930868ce641bb2a28fe1f98e816d65b}} 
+\index{DynamicRectangle.RectangleScrolledEventHandler@{DynamicRectangle.RectangleScrolledEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicRectangle.RectangleScrolledEventHandler@{DynamicRectangle.RectangleScrolledEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Rectangle.\+Rectangle\+Scrolled\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Scroll\+Event}]{se }\end{DoxyParamCaption})}
+
+Method that deals with the scrolling event 
+\begin{DoxyParams}{Parameters}
+{\em se} & Event that caused the scrolling event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicRectangle_8java_source_l00087}{87}} of file \mbox{\hyperlink{DynamicRectangle_8java_source}{Dynamic\+Rectangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087                                            \{}
+\DoxyCodeLine{00088             Scale s = \textcolor{keyword}{new} Scale();}
+\DoxyCodeLine{00089             \textcolor{keywordflow}{if} (se.getDeltaY() > 0) \{}
+\DoxyCodeLine{00090                 s.setX(se.getDeltaY() * 0.03);}
+\DoxyCodeLine{00091                 s.setY(se.getDeltaY() * 0.03);}
+\DoxyCodeLine{00092             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (se.getDeltaY() < 0) \{}
+\DoxyCodeLine{00093                 s.setX(-\/1 / (se.getDeltaY() * 0.03));}
+\DoxyCodeLine{00094                 s.setY(-\/1 / (se.getDeltaY() * 0.03));}
+\DoxyCodeLine{00095             \}}
+\DoxyCodeLine{00096             s.setPivotX(getX() + getWidth()/2);}
+\DoxyCodeLine{00097             s.setPivotY(getY() + getHeight()/2);}
+\DoxyCodeLine{00098             getTransforms().add(s);}
+\DoxyCodeLine{00099         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicRectangle_8java}{Dynamic\+Rectangle.\+java}}\end{DoxyCompactItemize}

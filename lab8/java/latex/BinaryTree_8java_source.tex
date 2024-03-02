@@ -1,0 +1,113 @@
+\hypertarget{BinaryTree_8java_source}{}\doxysection{Binary\+Tree.\+java}
+\mbox{\hyperlink{BinaryTree_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00001}00001 \textcolor{keyword}{import} java.io.PrintWriter;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00002}00002 \textcolor{keyword}{import} java.io.Serializable;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00003}00003 \textcolor{keyword}{import} java.lang.Comparable;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00004}00004 \textcolor{keyword}{import} java.util.LinkedList;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00010}\mbox{\hyperlink{classBinaryTree_3_01T_01extends_01Comparable}{00010}} \textcolor{keyword}{class }BinaryTree<T \textcolor{keyword}{extends} Comparable<T>> implements java.io.Serializable \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00011}00011     }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00013}\mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{00013}}     \textcolor{keyword}{private} Node<T> \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00016}\mbox{\hyperlink{BinaryTree_8java_a0b86e44425dbe3c9d866aa273f87828a}{00016}}     \textcolor{keyword}{private} String \mbox{\hyperlink{BinaryTree_8java_a0b86e44425dbe3c9d866aa273f87828a}{type}};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00021}00021     \textcolor{keyword}{private} \textcolor{keywordtype}{void} draw(Node<T> node) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00022}00022         \textcolor{keywordflow}{if} (node == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00023}00023             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00024}00024         \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00025}00025         draw(node.getLeft());}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00026}00026         System.out.print(node.getKey() + \textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00027}00027         draw(node.getRight());}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00035}00035     \textcolor{keyword}{private} Node<T> search(T value, Node<T> node) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00036}00036         \textcolor{keywordflow}{if} (node == \textcolor{keyword}{null} || node.getKey().equals(value)) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00037}00037             \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00038}00038         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00039}00039             \textcolor{keywordflow}{if} (value.compareTo(node.getKey()) < 0) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00040}00040                 \textcolor{keywordflow}{return} search(value, node.getLeft());}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00041}00041             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00042}00042                 \textcolor{keywordflow}{return} search(value, node.getRight());}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00043}00043             \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00044}00044         \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00051}00051     \textcolor{keyword}{private} Node<T> minimum(Node<T> node) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00052}00052         \textcolor{keywordflow}{if} (node.getLeft() == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00053}00053             \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00054}00054         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00055}00055             \textcolor{keywordflow}{return} minimum(node.getLeft());}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00056}00056         \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00064}00064     \textcolor{keyword}{private} Node<T> delete(Node<T> node, T \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00065}00065         \textcolor{keywordflow}{if} (node == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00066}00066             \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00067}00067         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}}.compareTo(node.getKey()) < 0) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00068}00068             node.setLeft(delete(node.getLeft(), \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}}));}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00069}00069         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}}.compareTo(node.getKey()) > 0) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00070}00070             node.setRight(delete(node.getRight(), \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}}));}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00071}00071         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00072}00072             \textcolor{keywordflow}{if} (node.getLeft() == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00073}00073                 \textcolor{keywordflow}{return} node.getRight();}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00074}00074             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node.getRight() == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00075}00075                 \textcolor{keywordflow}{return} node.getLeft();}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00076}00076             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00077}00077                 node.setKey(minimum(node.getRight()).getKey());}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00078}00078                 node.setRight(delete(node.getRight(), node.getKey()));}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00079}00079             \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00080}00080         \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00081}00081         \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00087}00087     \textcolor{keyword}{public} Node<T> getRoot() \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00088}00088         \textcolor{keywordflow}{return} \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00094}00094     \textcolor{keyword}{public} BinaryTree(String \mbox{\hyperlink{BinaryTree_8java_a0b86e44425dbe3c9d866aa273f87828a}{type}}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00095}00095         \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00096}00096         this.type = \mbox{\hyperlink{BinaryTree_8java_a0b86e44425dbe3c9d866aa273f87828a}{type}};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00102}00102     \textcolor{keyword}{public} String getType() \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00103}00103         \textcolor{keywordflow}{return} \mbox{\hyperlink{BinaryTree_8java_a0b86e44425dbe3c9d866aa273f87828a}{type}};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00104}00104     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00110}00110     \textcolor{keyword}{public} Node<T> search(T value) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00111}00111         \textcolor{keywordflow}{return} search(value, \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}});}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00117}00117     \textcolor{keyword}{public} \textcolor{keywordtype}{void} insert(T value) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00118}00118         \textcolor{keywordflow}{if} (\mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00119}00119             \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}} = \textcolor{keyword}{new} Node<T>(value);}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00120}00120         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00121}00121             Node<T> currentNode = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00122}00122             Node<T> nextNode = \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}};}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00123}00123             \textcolor{keywordflow}{while} (nextNode != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00124}00124                 currentNode = nextNode;}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00125}00125                 \textcolor{keywordflow}{if} (nextNode.getKey().compareTo(value) <= 0) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00126}00126                     nextNode = currentNode.getRight();}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00127}00127                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00128}00128                     nextNode = currentNode.getLeft();}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00129}00129                 \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00130}00130             \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00131}00131             \textcolor{keywordflow}{if} (currentNode.getKey().compareTo(value) <= 0) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00132}00132                 currentNode.setRight(\textcolor{keyword}{new} Node<T>(value));}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00133}00133             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00134}00134                 currentNode.setLeft(\textcolor{keyword}{new} Node<T>(value));}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00135}00135             \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00136}00136         \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00137}00137     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00142}00142     \textcolor{keyword}{public} \textcolor{keywordtype}{void} delete(T \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}}) \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00143}00143         \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}} = delete(\mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}}, \mbox{\hyperlink{Node_8java_a8e97d4d84f7c25d2ba6644ddae86eea6}{key}});}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00144}00144     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00147}00147     \textcolor{keyword}{public} \textcolor{keywordtype}{void} draw() \{}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00148}00148         draw(\mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}});}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00149}00149         System.out.println();}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00150}00150     \}}
+\DoxyCodeLine{\Hypertarget{BinaryTree_8java_source_l00151}00151 \}}
+
+\end{DoxyCode}

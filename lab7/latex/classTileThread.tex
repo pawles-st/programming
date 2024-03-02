@@ -1,0 +1,290 @@
+\hypertarget{classTileThread}{}\doxysection{Tile\+Thread Class Reference}
+\label{classTileThread}\index{TileThread@{TileThread}}
+
+
+Inheritance diagram for Tile\+Thread\+:
+% FIG 0
+
+
+Collaboration diagram for Tile\+Thread\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTileThread_a2082996b4b3d0cb17f75490aa657bfd5}{Tile\+Thread}} (\mbox{\hyperlink{classTileButton}{Tile\+Button}} \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}, int \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}}, int \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}})
+\item 
+void \mbox{\hyperlink{classTileThread_a8fd9f094039c6b3c2ff0c8fa3701d6ad}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classTileThread_a2366c47201bbf9df73a5d826ac91bfb3}{init\+Values}} (double \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}}, Array\+List$<$ \mbox{\hyperlink{classTileButton}{Tile\+Button}} $>$ \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tile\+List}}, int \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}}, int \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTileThread_a3291dad3691c3f3f5d9125c3bdf04956}{change}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTileButton}{Tile\+Button}} \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}
+\item 
+int \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}}
+\item 
+int \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Object \mbox{\hyperlink{classTileThread_aeb16430bf849e333363332beeca92741}{synch}} = new Object()
+\item 
+static double \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}}
+\item 
+static Array\+List$<$ \mbox{\hyperlink{classTileButton}{Tile\+Button}} $>$ \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tile\+List}}
+\item 
+static int \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}}
+\item 
+static int \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class for the thread actions of a single tile \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00007}{7}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTileThread_a2082996b4b3d0cb17f75490aa657bfd5}\label{classTileThread_a2082996b4b3d0cb17f75490aa657bfd5}} 
+\index{TileThread@{TileThread}!TileThread@{TileThread}}
+\index{TileThread@{TileThread}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{TileThread()}{TileThread()}}
+{\footnotesize\ttfamily Tile\+Thread.\+Tile\+Thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTileButton}{Tile\+Button}}}]{tile,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em tile} & the button for the current tile \\
+\hline
+{\em x} & the x position of the tile \\
+\hline
+{\em y} & the y position of the tile \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00029}{29}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029                                                      \{}
+\DoxyCodeLine{00030         this.tile = \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}};}
+\DoxyCodeLine{00031         this.\mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}} = \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}};}
+\DoxyCodeLine{00032         this.\mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} = \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}};}
+\DoxyCodeLine{00033     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTileThread_a3291dad3691c3f3f5d9125c3bdf04956}\label{classTileThread_a3291dad3691c3f3f5d9125c3bdf04956}} 
+\index{TileThread@{TileThread}!change@{change}}
+\index{change@{change}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{change()}{change()}}
+{\footnotesize\ttfamily void Tile\+Thread.\+change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Method that changes the current state of the tile 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00047}{47}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047                           \{}
+\DoxyCodeLine{00048         \textcolor{keyword}{synchronized} (\mbox{\hyperlink{classTileThread_aeb16430bf849e333363332beeca92741}{synch}}) \{}
+\DoxyCodeLine{00049             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a4a4608c0ffa8f1f7e859ffc3646eef31}{getState}}()) \{}
+\DoxyCodeLine{00050                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_ad8e17cbbc05a149e98f541f5c223ea1d}{randomProbability}}() <= \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}}) \{}
+\DoxyCodeLine{00051                     \textcolor{keyword}{final} \textcolor{keywordtype}{double} newHue = \mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_a3bd488d2c6e575a211819d61cadc176c}{randomHue}}();}
+\DoxyCodeLine{00052                     \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a10dce7129f2cb518fa4886340a25a736}{changeBackground}}(newHue);}
+\DoxyCodeLine{00053                     \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a07736d501f0bbc4d71af056ce15c053e}{setHue}}(newHue);}
+\DoxyCodeLine{00054                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00055                     \textcolor{keywordtype}{double} newHue = 0;}
+\DoxyCodeLine{00056                     \textcolor{keywordtype}{int} active\_neighbours = 0;}
+\DoxyCodeLine{00057                     \textcolor{keywordtype}{int} up = \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}}*\mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}} + Math.floorMod(\mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} -\/ 1, \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}});}
+\DoxyCodeLine{00058                     \textcolor{keywordtype}{int} down = \mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}}*\mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}} + Math.floorMod(\mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} + 1, \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}});}
+\DoxyCodeLine{00059                     \textcolor{keywordtype}{int} right = \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} + \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}}*Math.floorMod(\mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}} + 1, \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}});}
+\DoxyCodeLine{00060                     \textcolor{keywordtype}{int} left = \mbox{\hyperlink{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}{y}} + \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}}*Math.floorMod(\mbox{\hyperlink{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}{x}} -\/ 1, \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}});}
+\DoxyCodeLine{00061                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(up).getState()) \{}
+\DoxyCodeLine{00062                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(up).getHue();}
+\DoxyCodeLine{00063                         ++active\_neighbours;}
+\DoxyCodeLine{00064                     \}}
+\DoxyCodeLine{00065                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(down).getState()) \{}
+\DoxyCodeLine{00066                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(down).getHue();}
+\DoxyCodeLine{00067                         ++active\_neighbours;}
+\DoxyCodeLine{00068                     \}}
+\DoxyCodeLine{00069                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(right).getState()) \{}
+\DoxyCodeLine{00070                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(right).getHue();}
+\DoxyCodeLine{00071                         ++active\_neighbours;}
+\DoxyCodeLine{00072                     \}}
+\DoxyCodeLine{00073                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(left).getState()) \{}
+\DoxyCodeLine{00074                         newHue += \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}}.get(left).getHue();}
+\DoxyCodeLine{00075                         ++active\_neighbours;}
+\DoxyCodeLine{00076                     \}}
+\DoxyCodeLine{00077                     \textcolor{keywordflow}{if} (active\_neighbours != 0) \{}
+\DoxyCodeLine{00078                         newHue /= active\_neighbours;}
+\DoxyCodeLine{00079                         \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a10dce7129f2cb518fa4886340a25a736}{changeBackground}}(newHue);}
+\DoxyCodeLine{00080                         \mbox{\hyperlink{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}{tile}}.\mbox{\hyperlink{classTileButton_a07736d501f0bbc4d71af056ce15c053e}{setHue}}(newHue);}
+\DoxyCodeLine{00081                     \};}
+\DoxyCodeLine{00082                 \}}
+\DoxyCodeLine{00083             \}}
+\DoxyCodeLine{00084         \}}
+\DoxyCodeLine{00085     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTileThread_a2366c47201bbf9df73a5d826ac91bfb3}\label{classTileThread_a2366c47201bbf9df73a5d826ac91bfb3}} 
+\index{TileThread@{TileThread}!initValues@{initValues}}
+\index{initValues@{initValues}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{initValues()}{initValues()}}
+{\footnotesize\ttfamily static void Tile\+Thread.\+init\+Values (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{Array\+List$<$ \mbox{\hyperlink{classTileButton}{Tile\+Button}} $>$}]{tile\+List,  }\item[{int}]{n,  }\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Method for initialisation of the static members 
+\begin{DoxyParams}{Parameters}
+{\em p} & probability for deciding how to change the state \\
+\hline
+{\em tile\+List} & the Array\+List of all tiles \\
+\hline
+{\em n} & the width of the board \\
+\hline
+{\em m} & the height of the board \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00040}{40}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040                                                                                           \{}
+\DoxyCodeLine{00041         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}} = \mbox{\hyperlink{classTileThread_a504045f2e486817c7729b8f8f43334f2}{p}};}
+\DoxyCodeLine{00042         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}} = \mbox{\hyperlink{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}{tileList}};}
+\DoxyCodeLine{00043         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}} = \mbox{\hyperlink{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}{n}};}
+\DoxyCodeLine{00044         \mbox{\hyperlink{classTileThread}{TileThread}}.\mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}} = \mbox{\hyperlink{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}{m}};}
+\DoxyCodeLine{00045     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTileThread_a8fd9f094039c6b3c2ff0c8fa3701d6ad}\label{classTileThread_a8fd9f094039c6b3c2ff0c8fa3701d6ad}} 
+\index{TileThread@{TileThread}!run@{run}}
+\index{run@{run}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Tile\+Thread.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Maid thread method 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00088}{88}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088                       \{}
+\DoxyCodeLine{00089         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00090             \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00091                 sleep(\mbox{\hyperlink{classRNG}{RNG}}.\mbox{\hyperlink{classRNG_a9486cf43ea9add2f25ceda793133dc7b}{randomDelay}}());}
+\DoxyCodeLine{00092                 \mbox{\hyperlink{classTileThread_a3291dad3691c3f3f5d9125c3bdf04956}{change}}();}
+\DoxyCodeLine{00093             \} \textcolor{keywordflow}{catch} (InterruptedException ie)\{\}}
+\DoxyCodeLine{00094         \}}
+\DoxyCodeLine{00095     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}\label{classTileThread_a8c7cada1b8e1b7c181f1b6065102a6d8}} 
+\index{TileThread@{TileThread}!m@{m}}
+\index{m@{m}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily int Tile\+Thread.\+m\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+The height of the board 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00017}{17}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+\mbox{\Hypertarget{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}\label{classTileThread_a2bfd08d91810c5d2e5023aa1ab8967d6}} 
+\index{TileThread@{TileThread}!n@{n}}
+\index{n@{n}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily int Tile\+Thread.\+n\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+The width of the board 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00015}{15}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+\mbox{\Hypertarget{classTileThread_a504045f2e486817c7729b8f8f43334f2}\label{classTileThread_a504045f2e486817c7729b8f8f43334f2}} 
+\index{TileThread@{TileThread}!p@{p}}
+\index{p@{p}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily double Tile\+Thread.\+p\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Probability variable for deciding which action the tile takes 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00011}{11}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+\mbox{\Hypertarget{classTileThread_aeb16430bf849e333363332beeca92741}\label{classTileThread_aeb16430bf849e333363332beeca92741}} 
+\index{TileThread@{TileThread}!synch@{synch}}
+\index{synch@{synch}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{synch}{synch}}
+{\footnotesize\ttfamily final Object Tile\+Thread.\+synch = new Object()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Object for tile synchronisation 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00009}{9}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+\mbox{\Hypertarget{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}\label{classTileThread_ad1e8be846ac3516f1c7cdd3f45ceecd6}} 
+\index{TileThread@{TileThread}!tile@{tile}}
+\index{tile@{tile}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{tile}{tile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTileButton}{Tile\+Button}} Tile\+Thread.\+tile\hspace{0.3cm}{\ttfamily [private]}}
+
+The tile\textquotesingle{}s button 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00019}{19}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+\mbox{\Hypertarget{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}\label{classTileThread_a7411628aba1bbdf8e54955e5642a1a3f}} 
+\index{TileThread@{TileThread}!tileList@{tileList}}
+\index{tileList@{tileList}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{tileList}{tileList}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classTileButton}{Tile\+Button}}$>$ Tile\+Thread.\+tile\+List\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Array that holds all the tile buttons 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00013}{13}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+\mbox{\Hypertarget{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}\label{classTileThread_a1564c7b7a0e74bb6a4bbb7109f1f532a}} 
+\index{TileThread@{TileThread}!x@{x}}
+\index{x@{x}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Tile\+Thread.\+x\hspace{0.3cm}{\ttfamily [private]}}
+
+The tile x position 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00021}{21}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+\mbox{\Hypertarget{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}\label{classTileThread_a5de151c1257fc1b7996ad61e46ba26f5}} 
+\index{TileThread@{TileThread}!y@{y}}
+\index{y@{y}!TileThread@{TileThread}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Tile\+Thread.\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+The tile y position 
+
+Definition at line \mbox{\hyperlink{TileThread_8java_source_l00023}{23}} of file \mbox{\hyperlink{TileThread_8java_source}{Tile\+Thread.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TileThread_8java}{Tile\+Thread.\+java}}\end{DoxyCompactItemize}

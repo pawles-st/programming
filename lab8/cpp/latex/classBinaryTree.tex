@@ -1,0 +1,391 @@
+\hypertarget{classBinaryTree}{}\doxysection{Binary\+Tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classBinaryTree}\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+
+
+{\ttfamily \#include $<$binary\+\_\+tree.\+hpp$>$}
+
+
+
+Inheritance diagram for Binary\+Tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for Binary\+Tree\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBinaryTree_afa02c04e7f60666575ebc89974953780}{Binary\+Tree}} (std\+::string tree\+\_\+type)
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree_aa8c1bf25c25331facd41f9ccf58a8bf9}{search}} (T value)
+\item 
+void \mbox{\hyperlink{classBinaryTree_a88336f94d6e3435fa63c0cf7f67ac669}{insert}} (T value)
+\item 
+void \mbox{\hyperlink{classBinaryTree_aa28555b79fe1f431f2e540774adfad91}{delete\+\_\+node}} (T key)
+\item 
+void \mbox{\hyperlink{classBinaryTree_ac756c05a2e0aba148a7e55b86e96f539}{draw}} ()
+\item 
+virtual \mbox{\hyperlink{classBinaryTree_a8f43c1992afe82da282c838455876f8b}{$\sim$\+Binary\+Tree}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}}
+\item 
+std\+::string \mbox{\hyperlink{classBinaryTree_a891d9c629f9553089541efb9eddb3938}{type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBinaryTree_ac7bc73b4208049359a025bf5d66ebfe2}{draw}} (\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$node)
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree_a9620ab5e53a3ecee9f95d248118a9aee}{search}} (T value, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$node)
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree_af7aa1af88a02fca3d6db52aae4722ae5}{minimum}} (\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$node)
+\item 
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree_a731b9131ffff7002fe2d9742b429d50a}{delete\+\_\+node}} (\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$node, T key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Binary\+Tree$<$ T $>$}
+Binary tree class \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBinaryTree_afa02c04e7f60666575ebc89974953780}\label{classBinaryTree_afa02c04e7f60666575ebc89974953780}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!BinaryTree@{BinaryTree}}
+\index{BinaryTree@{BinaryTree}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BinaryTree()}{BinaryTree()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\mbox{\hyperlink{classBinaryTree}{\+::\+Binary\+Tree}} (\begin{DoxyParamCaption}\item[{std\+::string}]{tree\+\_\+type }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em tree\+\_\+type} & type of the tree \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063 : \mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}}(\textcolor{keyword}{nullptr}), \mbox{\hyperlink{classBinaryTree_a891d9c629f9553089541efb9eddb3938}{type}}(tree\_type) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_a8f43c1992afe82da282c838455876f8b}\label{classBinaryTree_a8f43c1992afe82da282c838455876f8b}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!````~BinaryTree@{$\sim$BinaryTree}}
+\index{````~BinaryTree@{$\sim$BinaryTree}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$BinaryTree()}{~BinaryTree()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classBinaryTree}{Binary\+Tree}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBinaryTree_a731b9131ffff7002fe2d9742b429d50a}\label{classBinaryTree_a731b9131ffff7002fe2d9742b429d50a}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!delete\_node@{delete\_node}}
+\index{delete\_node@{delete\_node}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{delete\_node()}{delete\_node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::delete\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$}]{node,  }\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Recursive method for deletion of a value 
+\begin{DoxyParams}{Parameters}
+{\em node} & node which is currently checked for the deletion criterion \\
+\hline
+{\em key} & the value to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+root of the subtree after deletion 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00171}{171}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171                                                    \{}
+\DoxyCodeLine{00172             \textcolor{keywordflow}{if} (node == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00173                 \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{00174             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key < node-\/>key) \{}
+\DoxyCodeLine{00175                 node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}} = \mbox{\hyperlink{classBinaryTree_aa28555b79fe1f431f2e540774adfad91}{delete\_node}}(node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}}, key);}
+\DoxyCodeLine{00176             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (key > node-\/>\mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}}) \{}
+\DoxyCodeLine{00177                 node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}} = \mbox{\hyperlink{classBinaryTree_aa28555b79fe1f431f2e540774adfad91}{delete\_node}}(node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}}, key);}
+\DoxyCodeLine{00178             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00179                 \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}} == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00180                     \mbox{\hyperlink{structNode}{Node<T>}}* next = node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}};}
+\DoxyCodeLine{00181                     \textcolor{keyword}{delete} node;}
+\DoxyCodeLine{00182                     \textcolor{keywordflow}{return} next;}
+\DoxyCodeLine{00183                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}} == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00184                     \mbox{\hyperlink{structNode}{Node<T>}}* next = node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}};}
+\DoxyCodeLine{00185                     \textcolor{keyword}{delete} node;}
+\DoxyCodeLine{00186                     \textcolor{keywordflow}{return} next;}
+\DoxyCodeLine{00187                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00188                     node-\/>\mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}} = \mbox{\hyperlink{classBinaryTree_af7aa1af88a02fca3d6db52aae4722ae5}{minimum}}(node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}})-\/>key;}
+\DoxyCodeLine{00189                     node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}} = \mbox{\hyperlink{classBinaryTree_aa28555b79fe1f431f2e540774adfad91}{delete\_node}}(node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}}, node-\/>\mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}});}
+\DoxyCodeLine{00190                 \}}
+\DoxyCodeLine{00191             \}}
+\DoxyCodeLine{00192             \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{00193         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_aa28555b79fe1f431f2e540774adfad91}\label{classBinaryTree_aa28555b79fe1f431f2e540774adfad91}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!delete\_node@{delete\_node}}
+\index{delete\_node@{delete\_node}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{delete\_node()}{delete\_node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::delete\+\_\+node (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
+
+Method for deleting a given value 
+\begin{DoxyParams}{Parameters}
+{\em key} & the value to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00103}{103}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103                                 \{}
+\DoxyCodeLine{00104             \mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}} = \mbox{\hyperlink{classBinaryTree_aa28555b79fe1f431f2e540774adfad91}{delete\_node}}(\mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}}, key);}
+\DoxyCodeLine{00105         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_ac756c05a2e0aba148a7e55b86e96f539}\label{classBinaryTree_ac756c05a2e0aba148a7e55b86e96f539}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!draw@{draw}}
+\index{draw@{draw}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Method for drawing the tree in terminal 
+
+Implements \mbox{\hyperlink{classBinaryTreePtr_a4ea88a0ce38ba7c6ef75c48dca2e4102}{Binary\+Tree\+Ptr}}.
+
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00108}{108}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108                     \{}
+\DoxyCodeLine{00109             std::cout << \textcolor{stringliteral}{"{}tree (drawn InOrder, current root = "{}};}
+\DoxyCodeLine{00110             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}} != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00111                 std::cout << \mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}}-\/>key;}
+\DoxyCodeLine{00112             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00113                 std::cout << \textcolor{stringliteral}{"{}null"{}};}
+\DoxyCodeLine{00114             \}}
+\DoxyCodeLine{00115             std::cout << \textcolor{stringliteral}{"{}): "{}};}
+\DoxyCodeLine{00116             \mbox{\hyperlink{classBinaryTree_ac756c05a2e0aba148a7e55b86e96f539}{draw}}(\mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}});}
+\DoxyCodeLine{00117             std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00118         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_ac7bc73b4208049359a025bf5d66ebfe2}\label{classBinaryTree_ac7bc73b4208049359a025bf5d66ebfe2}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!draw@{draw}}
+\index{draw@{draw}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Recursive Method for drawing the tree 
+\begin{DoxyParams}{Parameters}
+{\em node} & pointer to the currently drawn node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00127}{127}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127                                  \{}
+\DoxyCodeLine{00128             \textcolor{keywordflow}{if} (node == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00129                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00130             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00131                 \mbox{\hyperlink{classBinaryTree_ac756c05a2e0aba148a7e55b86e96f539}{draw}}(node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}});}
+\DoxyCodeLine{00132                 std::cout << node-\/>\mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}} << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00133                 \mbox{\hyperlink{classBinaryTree_ac756c05a2e0aba148a7e55b86e96f539}{draw}}(node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}});}
+\DoxyCodeLine{00134             \}}
+\DoxyCodeLine{00135         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_a88336f94d6e3435fa63c0cf7f67ac669}\label{classBinaryTree_a88336f94d6e3435fa63c0cf7f67ac669}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})}
+
+Method for inserting a given value into the tree 
+\begin{DoxyParams}{Parameters}
+{\em value} & value to insert \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076                              \{}
+\DoxyCodeLine{00077             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}} == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00078                 \mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}} = \textcolor{keyword}{new} \mbox{\hyperlink{structNode}{Node<T>}}(value);}
+\DoxyCodeLine{00079             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00080                 \mbox{\hyperlink{structNode}{Node<T>}}* currentNode = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00081                 \mbox{\hyperlink{structNode}{Node<T>}}* nextNode = \mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}};}
+\DoxyCodeLine{00082                 \textcolor{keywordflow}{while} (nextNode != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00083                     currentNode = nextNode;}
+\DoxyCodeLine{00084                     \textcolor{keywordflow}{if} (nextNode-\/>\mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}} <= value) \{}
+\DoxyCodeLine{00085                         nextNode = currentNode-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}};}
+\DoxyCodeLine{00086                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00087                         nextNode = currentNode-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}};}
+\DoxyCodeLine{00088                     \}}
+\DoxyCodeLine{00089                 \}}
+\DoxyCodeLine{00090                 \textcolor{keywordflow}{if} (currentNode-\/>\mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}} <= value) \{}
+\DoxyCodeLine{00091                     currentNode-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}} = \textcolor{keyword}{new} \mbox{\hyperlink{structNode}{Node<T>}}(value);}
+\DoxyCodeLine{00092                     currentNode-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}}-\/>parent = currentNode;}
+\DoxyCodeLine{00093                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00094                     currentNode-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}} = \textcolor{keyword}{new} \mbox{\hyperlink{structNode}{Node<T>}}(value);}
+\DoxyCodeLine{00095                     currentNode-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}}-\/>parent = currentNode;}
+\DoxyCodeLine{00096                 \}}
+\DoxyCodeLine{00097             \}}
+\DoxyCodeLine{00098         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_af7aa1af88a02fca3d6db52aae4722ae5}\label{classBinaryTree_af7aa1af88a02fca3d6db52aae4722ae5}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!minimum@{minimum}}
+\index{minimum@{minimum}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{minimum()}{minimum()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::minimum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Method for finding a minimum of a subtree 
+\begin{DoxyParams}{Parameters}
+{\em node} & currently checked node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the node with a minimum value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00158}{158}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158                                         \{}
+\DoxyCodeLine{00159             \textcolor{keywordflow}{if} (node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}} == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{00160                 \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{00161             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00162                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinaryTree_af7aa1af88a02fca3d6db52aae4722ae5}{minimum}}(node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}});}
+\DoxyCodeLine{00163             \}}
+\DoxyCodeLine{00164         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_aa8c1bf25c25331facd41f9ccf58a8bf9}\label{classBinaryTree_aa8c1bf25c25331facd41f9ccf58a8bf9}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!search@{search}}
+\index{search@{search}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})}
+
+Method for searching the tree for a given value 
+\begin{DoxyParams}{Parameters}
+{\em value} & value to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the node whose key is the given value if such exists, nullptr otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069                                  \{}
+\DoxyCodeLine{00070             \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinaryTree_aa8c1bf25c25331facd41f9ccf58a8bf9}{search}}(value, \mbox{\hyperlink{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}{root}});}
+\DoxyCodeLine{00071         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classBinaryTree_a9620ab5e53a3ecee9f95d248118a9aee}\label{classBinaryTree_a9620ab5e53a3ecee9f95d248118a9aee}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!search@{search}}
+\index{search@{search}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::search (\begin{DoxyParamCaption}\item[{T}]{value,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Recurrsive method for searching for a value 
+\begin{DoxyParams}{Parameters}
+{\em value} & value to search for \\
+\hline
+{\em node} & pointer to a currently compared node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer for a node which contains the value if such exists, nullptr otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00142}{142}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142                                                 \{}
+\DoxyCodeLine{00143             \textcolor{keywordflow}{if} (node == \textcolor{keyword}{nullptr} || node-\/>\mbox{\hyperlink{structNode_a9d5e5c1914f5ed67389740354a607527}{key}} == value) \{}
+\DoxyCodeLine{00144                 \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{00145             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00146                 \textcolor{keywordflow}{if} (value < node-\/>key) \{}
+\DoxyCodeLine{00147                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinaryTree_aa8c1bf25c25331facd41f9ccf58a8bf9}{search}}(value, node-\/>\mbox{\hyperlink{structNode_a2841886a16c27e72b21885025c00b44b}{left}});}
+\DoxyCodeLine{00148                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00149                     \textcolor{keywordflow}{return} \mbox{\hyperlink{classBinaryTree_aa8c1bf25c25331facd41f9ccf58a8bf9}{search}}(value, node-\/>\mbox{\hyperlink{structNode_ad7092450d89448320103cde1f72da320}{right}});}
+\DoxyCodeLine{00150                 \}}
+\DoxyCodeLine{00151             \}}
+\DoxyCodeLine{00152         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}\label{classBinaryTree_a2db40f59d96afceb1a005e6d9aef2374}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!root@{root}}
+\index{root@{root}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$T$>$$\ast$ \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::root}
+
+Tree root pointer 
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+\mbox{\Hypertarget{classBinaryTree_a891d9c629f9553089541efb9eddb3938}\label{classBinaryTree_a891d9c629f9553089541efb9eddb3938}} 
+\index{BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}!type@{type}}
+\index{type@{type}!BinaryTree$<$ T $>$@{BinaryTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string \mbox{\hyperlink{classBinaryTree}{Binary\+Tree}}$<$ T $>$\+::type}
+
+Type of the tree 
+
+Definition at line \mbox{\hyperlink{binary__tree_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{binary__tree_8hpp_source}{binary\+\_\+tree.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{binary__tree_8hpp}{binary\+\_\+tree.\+hpp}}\end{DoxyCompactItemize}

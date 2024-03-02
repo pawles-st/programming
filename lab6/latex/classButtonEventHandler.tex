@@ -1,0 +1,132 @@
+\hypertarget{classButtonEventHandler}{}\doxysection{Button\+Event\+Handler Class Reference}
+\label{classButtonEventHandler}\index{ButtonEventHandler@{ButtonEventHandler}}
+Inheritance diagram for Button\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classButtonEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classButtonEventHandler_a416fa1567a5ea6f1eb87a0f965e86921}{Button\+Event\+Handler}} (\mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}} \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{state\+Wrap}}, Pane \mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{canvas}})
+\item 
+void \mbox{\hyperlink{classButtonEventHandler_a7ce8055133f132fbf38b5cefecd2bbb3}{handle}} (Action\+Event ae)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}} \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{state\+Wrap}}
+\item 
+Pane \mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{canvas}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class that deals with button events \begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{ButtonEventHandler_8java_source_l00010}{10}} of file \mbox{\hyperlink{ButtonEventHandler_8java_source}{Button\+Event\+Handler.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classButtonEventHandler_a416fa1567a5ea6f1eb87a0f965e86921}\label{classButtonEventHandler_a416fa1567a5ea6f1eb87a0f965e86921}} 
+\index{ButtonEventHandler@{ButtonEventHandler}!ButtonEventHandler@{ButtonEventHandler}}
+\index{ButtonEventHandler@{ButtonEventHandler}!ButtonEventHandler@{ButtonEventHandler}}
+\doxysubsubsection{\texorpdfstring{ButtonEventHandler()}{ButtonEventHandler()}}
+{\footnotesize\ttfamily Button\+Event\+Handler.\+Button\+Event\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}}}]{state\+Wrap,  }\item[{Pane}]{canvas }\end{DoxyParamCaption})}
+
+Main constructor 
+\begin{DoxyParams}{Parameters}
+{\em state\+Wrap} & current state \\
+\hline
+{\em canvas} & the canvas to draw on \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ButtonEventHandler_8java_source_l00019}{19}} of file \mbox{\hyperlink{ButtonEventHandler_8java_source}{Button\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019                                                                       \{}
+\DoxyCodeLine{00020         this.stateWrap = \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}};}
+\DoxyCodeLine{00021         this.\mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{canvas}} = \mbox{\hyperlink{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}{canvas}};}
+\DoxyCodeLine{00022     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classButtonEventHandler_a7ce8055133f132fbf38b5cefecd2bbb3}\label{classButtonEventHandler_a7ce8055133f132fbf38b5cefecd2bbb3}} 
+\index{ButtonEventHandler@{ButtonEventHandler}!handle@{handle}}
+\index{handle@{handle}!ButtonEventHandler@{ButtonEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Button\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Action\+Event}]{ae }\end{DoxyParamCaption})}
+
+Method that deals with pressing the button 
+\begin{DoxyParams}{Parameters}
+{\em ae} & action that caused the event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ButtonEventHandler_8java_source_l00027}{27}} of file \mbox{\hyperlink{ButtonEventHandler_8java_source}{Button\+Event\+Handler.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027                                        \{}
+\DoxyCodeLine{00028         Button aeSource = (Button) ae.getSource();}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}select"{}})) \{}
+\DoxyCodeLine{00030             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classSelectShape}{SelectShape}}();}
+\DoxyCodeLine{00031             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}circle"{}})) \{}
+\DoxyCodeLine{00034             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classDrawCircle}{DrawCircle}}();}
+\DoxyCodeLine{00035             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00036         \}}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}rectangle"{}})) \{}
+\DoxyCodeLine{00038             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classDrawRectangle}{DrawRectangle}}();}
+\DoxyCodeLine{00039             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00040         \}}
+\DoxyCodeLine{00041         \textcolor{keywordflow}{if} (aeSource.getText().equals(\textcolor{stringliteral}{"{}triangle"{}})) \{}
+\DoxyCodeLine{00042             \mbox{\hyperlink{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}{stateWrap}}.\mbox{\hyperlink{classStateActionWrap_ad27d7ab385279cf6aef612b3c85cb924}{state}} = \textcolor{keyword}{new} \mbox{\hyperlink{classDrawTriangle}{DrawTriangle}}();}
+\DoxyCodeLine{00043             \mbox{\hyperlink{classStateActionWrap}{StateActionWrap}}.\mbox{\hyperlink{classStateActionWrap_ad9442840b3b279408f375b86480ba09f}{select}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00044         \}}
+\DoxyCodeLine{00045     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}\label{classButtonEventHandler_a7830900daa456e9fb24cac1965994cb3}} 
+\index{ButtonEventHandler@{ButtonEventHandler}!canvas@{canvas}}
+\index{canvas@{canvas}!ButtonEventHandler@{ButtonEventHandler}}
+\doxysubsubsection{\texorpdfstring{canvas}{canvas}}
+{\footnotesize\ttfamily Pane Button\+Event\+Handler.\+canvas\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that holds the canvas to draw on 
+
+Definition at line \mbox{\hyperlink{ButtonEventHandler_8java_source_l00014}{14}} of file \mbox{\hyperlink{ButtonEventHandler_8java_source}{Button\+Event\+Handler.\+java}}.
+
+\mbox{\Hypertarget{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}\label{classButtonEventHandler_a723a24cce1d8aae82357f4d93e852e00}} 
+\index{ButtonEventHandler@{ButtonEventHandler}!stateWrap@{stateWrap}}
+\index{stateWrap@{stateWrap}!ButtonEventHandler@{ButtonEventHandler}}
+\doxysubsubsection{\texorpdfstring{stateWrap}{stateWrap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStateActionWrap}{State\+Action\+Wrap}} Button\+Event\+Handler.\+state\+Wrap\hspace{0.3cm}{\ttfamily [private]}}
+
+Variable that holds the current state 
+
+Definition at line \mbox{\hyperlink{ButtonEventHandler_8java_source_l00012}{12}} of file \mbox{\hyperlink{ButtonEventHandler_8java_source}{Button\+Event\+Handler.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ButtonEventHandler_8java}{Button\+Event\+Handler.\+java}}\end{DoxyCompactItemize}

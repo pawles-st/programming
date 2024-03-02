@@ -1,0 +1,55 @@
+\hypertarget{classDynamicTriangle_1_1TriangleDraggedEventHandler}{}\doxysection{Dynamic\+Triangle.\+Triangle\+Dragged\+Event\+Handler Class Reference}
+\label{classDynamicTriangle_1_1TriangleDraggedEventHandler}\index{DynamicTriangle.TriangleDraggedEventHandler@{DynamicTriangle.TriangleDraggedEventHandler}}
+Inheritance diagram for Dynamic\+Triangle.\+Triangle\+Dragged\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicTriangle_1_1TriangleDraggedEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicTriangle_1_1TriangleDraggedEventHandler_a1b31a43b1a55042820991978bca7e7e4}{handle}} (Mouse\+Event me)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with draggin the triangle 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00077}{77}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_1_1TriangleDraggedEventHandler_a1b31a43b1a55042820991978bca7e7e4}\label{classDynamicTriangle_1_1TriangleDraggedEventHandler_a1b31a43b1a55042820991978bca7e7e4}} 
+\index{DynamicTriangle.TriangleDraggedEventHandler@{DynamicTriangle.TriangleDraggedEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicTriangle.TriangleDraggedEventHandler@{DynamicTriangle.TriangleDraggedEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Triangle.\+Triangle\+Dragged\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{me }\end{DoxyParamCaption})}
+
+Method that deals with the dragging event 
+\begin{DoxyParams}{Parameters}
+{\em me} & Event that caused the dragging event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00082}{82}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082                                           \{}
+\DoxyCodeLine{00083             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classDynamicTriangle_a540cd1e2e2e00c980b27f29b17d1293b}{isSelected}}) \{}
+\DoxyCodeLine{00084                 setLayoutX(getLayoutX() + me.getSceneX() -\/ \mbox{\hyperlink{classDynamicTriangle_af91f961a4038c6f15aee0bb722c6b1e8}{pressX}});}
+\DoxyCodeLine{00085                 setLayoutY(getLayoutY() + me.getSceneY() -\/ \mbox{\hyperlink{classDynamicTriangle_a7e499fd7c452dfa621e5c80e8bd817f8}{pressY}});}
+\DoxyCodeLine{00086                 \mbox{\hyperlink{classDynamicTriangle_af91f961a4038c6f15aee0bb722c6b1e8}{pressX}} = me.getSceneX();}
+\DoxyCodeLine{00087                 \mbox{\hyperlink{classDynamicTriangle_a7e499fd7c452dfa621e5c80e8bd817f8}{pressY}} = me.getSceneY();}
+\DoxyCodeLine{00088             \}}
+\DoxyCodeLine{00089         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicTriangle_8java}{Dynamic\+Triangle.\+java}}\end{DoxyCompactItemize}

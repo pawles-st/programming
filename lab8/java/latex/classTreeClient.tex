@@ -1,0 +1,307 @@
+\hypertarget{classTreeClient}{}\doxysection{Tree\+Client Class Reference}
+\label{classTreeClient}\index{TreeClient@{TreeClient}}
+
+
+Inheritance diagram for Tree\+Client\+:
+% FIG 0
+
+
+Collaboration diagram for Tree\+Client\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTreeClient_1_1StringWrap}{String\+Wrap}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTreeClient_aec2d3159d9091bb0e0d3f5d6d5b6776f}{start}} (Stage primary\+Stage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classTreeClient_a76ee08457aaa8d22093210abe283eeec}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTreeClient_a94b199e7a5de5bc092099822b4220f55}{draw\+Tree}} (int x1, int y1, int x, int y, Node node, Pane bg, int depth)
+\item 
+void \mbox{\hyperlink{classTreeClient_af5c7bde529e61d7e2367cdd35530ac98}{run\+Tree}} (Stage primary\+Stage)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Client class for the binary tree application \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{TreeClient_8java_source_l00029}{29}} of file \mbox{\hyperlink{TreeClient_8java_source}{Tree\+Client.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTreeClient_a94b199e7a5de5bc092099822b4220f55}\label{classTreeClient_a94b199e7a5de5bc092099822b4220f55}} 
+\index{TreeClient@{TreeClient}!drawTree@{drawTree}}
+\index{drawTree@{drawTree}!TreeClient@{TreeClient}}
+\doxysubsubsection{\texorpdfstring{drawTree()}{drawTree()}}
+{\footnotesize\ttfamily void Tree\+Client.\+draw\+Tree (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{Node}]{node,  }\item[{Pane}]{bg,  }\item[{int}]{depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Recursive method for GUI tree drawing 
+\begin{DoxyParams}{Parameters}
+{\em x1} & starting x coordinate for the line \\
+\hline
+{\em y1} & starting y coordinate for the line \\
+\hline
+{\em x} & ending x coordinate for the line \\
+\hline
+{\em y} & ending y coordinate for the line \\
+\hline
+{\em node} & currently drawn node \\
+\hline
+{\em bg} & Pane on which the objects are drawn \\
+\hline
+{\em depth} & depth of the recursion \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TreeClient_8java_source_l00045}{45}} of file \mbox{\hyperlink{TreeClient_8java_source}{Tree\+Client.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045                                                                                        \{}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         \textcolor{comment}{// objects drawn}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         Line line = \textcolor{keyword}{new} Line(x1, y1 + 5, x, y);}
+\DoxyCodeLine{00050         Circle circle = \textcolor{keyword}{new} Circle(x, y, 15, Paint.valueOf(\textcolor{stringliteral}{"{}orange"{}}));}
+\DoxyCodeLine{00051         Text text = \textcolor{keyword}{new} Text(x -\/ 3, y + 3, String.valueOf(node.getKey()));}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \textcolor{comment}{// addition to the pane}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         bg.getChildren().add(line);}
+\DoxyCodeLine{00056         bg.getChildren().add(circle);}
+\DoxyCodeLine{00057         bg.getChildren().add(text);}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059         \textcolor{comment}{// recursion}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061         \textcolor{keywordflow}{if} (node.getLeft() != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00062             \mbox{\hyperlink{classTreeClient_a94b199e7a5de5bc092099822b4220f55}{drawTree}}(x, y, x -\/ 190/depth, y + 30, node.getLeft(), bg, depth * 2);}
+\DoxyCodeLine{00063         \}}
+\DoxyCodeLine{00064         \textcolor{keywordflow}{if} (node.getRight() != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00065             \mbox{\hyperlink{classTreeClient_a94b199e7a5de5bc092099822b4220f55}{drawTree}}(x, y, x + 190/depth, y + 30, node.getRight(), bg, depth * 2);}
+\DoxyCodeLine{00066         \}}
+\DoxyCodeLine{00067     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTreeClient_a76ee08457aaa8d22093210abe283eeec}\label{classTreeClient_a76ee08457aaa8d22093210abe283eeec}} 
+\index{TreeClient@{TreeClient}!main@{main}}
+\index{main@{main}!TreeClient@{TreeClient}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Tree\+Client.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+The main method of the programme 
+\begin{DoxyParams}{Parameters}
+{\em args} & entry arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TreeClient_8java_source_l00222}{222}} of file \mbox{\hyperlink{TreeClient_8java_source}{Tree\+Client.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00222                                            \{}
+\DoxyCodeLine{00223         launch(args);}
+\DoxyCodeLine{00224     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTreeClient_af5c7bde529e61d7e2367cdd35530ac98}\label{classTreeClient_af5c7bde529e61d7e2367cdd35530ac98}} 
+\index{TreeClient@{TreeClient}!runTree@{runTree}}
+\index{runTree@{runTree}!TreeClient@{TreeClient}}
+\doxysubsubsection{\texorpdfstring{runTree()}{runTree()}}
+{\footnotesize\ttfamily void Tree\+Client.\+run\+Tree (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Method that handles the tree, GUI, and server interaction 
+\begin{DoxyParams}{Parameters}
+{\em primary\+Stage} & main stage of javafx \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TreeClient_8java_source_l00072}{72}} of file \mbox{\hyperlink{TreeClient_8java_source}{Tree\+Client.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072                                              \{}
+\DoxyCodeLine{00073         }
+\DoxyCodeLine{00074         \textcolor{comment}{// tree creation}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         BinaryTree tree = \textcolor{keyword}{null};}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{switch} (StringWrap.type) \{}
+\DoxyCodeLine{00078             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}Integer"{}}:}
+\DoxyCodeLine{00079                 tree = \textcolor{keyword}{new} BinaryTree<Integer>(\textcolor{stringliteral}{"{}Integer"{}});}
+\DoxyCodeLine{00080                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00081             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}Double"{}}:}
+\DoxyCodeLine{00082                 tree = \textcolor{keyword}{new} BinaryTree<Double>(\textcolor{stringliteral}{"{}Double"{}});}
+\DoxyCodeLine{00083                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00084             \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}String"{}}:}
+\DoxyCodeLine{00085                 tree = \textcolor{keyword}{new} BinaryTree<String>(\textcolor{stringliteral}{"{}String"{}});}
+\DoxyCodeLine{00086                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00087         \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         \textcolor{comment}{// setting up GUI}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091         GridPane \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}} = \textcolor{keyword}{new} GridPane();}
+\DoxyCodeLine{00092         \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}}.setGridLinesVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{00093         RowConstraints row1 = \textcolor{keyword}{new} RowConstraints();}
+\DoxyCodeLine{00094         row1.setPercentHeight(25);}
+\DoxyCodeLine{00095         RowConstraints row2 = \textcolor{keyword}{new} RowConstraints();}
+\DoxyCodeLine{00096         row2.setPercentHeight(75);}
+\DoxyCodeLine{00097         \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}}.getRowConstraints().addAll(row1, row2);}
+\DoxyCodeLine{00098         Pane background = \textcolor{keyword}{new} Pane();}
+\DoxyCodeLine{00099         \textcolor{keyword}{final} ChoiceBox<String> action = \textcolor{keyword}{new} ChoiceBox<String>();}
+\DoxyCodeLine{00100         action.getItems().addAll(\textcolor{stringliteral}{"{}insert"{}}, \textcolor{stringliteral}{"{}search"{}}, \textcolor{stringliteral}{"{}delete"{}}, \textcolor{stringliteral}{"{}draw"{}});}
+\DoxyCodeLine{00101         action.setValue(\textcolor{stringliteral}{"{}draw"{}});}
+\DoxyCodeLine{00102         \textcolor{keyword}{final} TextField argument = \textcolor{keyword}{new} TextField();}
+\DoxyCodeLine{00103         \textcolor{keyword}{final} Button confirm = \textcolor{keyword}{new} Button(\textcolor{stringliteral}{"{}OK"{}});}
+\DoxyCodeLine{00104         \textcolor{keyword}{final} Label output = \textcolor{keyword}{new} Label();}
+\DoxyCodeLine{00105         HBox options = \textcolor{keyword}{new} HBox();}
+\DoxyCodeLine{00106         options.prefWidthProperty().bind(primaryStage.widthProperty());}
+\DoxyCodeLine{00107         options.setAlignment(Pos.CENTER);}
+\DoxyCodeLine{00108         options.setSpacing(25);}
+\DoxyCodeLine{00109         options.getChildren().addAll(action, argument, confirm, output);}
+\DoxyCodeLine{00110         \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}}.add(options, 0, 0);}
+\DoxyCodeLine{00111         \mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}}.add(background, 0, 1);}
+\DoxyCodeLine{00112         primaryStage.setScene(\textcolor{keyword}{new} Scene(\mbox{\hyperlink{BinaryTree_8java_a732410f677c0a626b0777a4f0e561280}{root}}, 800, 640));}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114         \textcolor{comment}{// wrapper class for client-\/server IO}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116         \textcolor{keyword}{abstract} \textcolor{keyword}{class }IO \{}
+\DoxyCodeLine{00117             \textcolor{keyword}{static} \textcolor{keyword}{public} ObjectOutputStream out = \textcolor{keyword}{null};}
+\DoxyCodeLine{00118             \textcolor{keyword}{static} \textcolor{keyword}{public} ObjectInputStream in = \textcolor{keyword}{null};}
+\DoxyCodeLine{00119         \}}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121         \textcolor{comment}{// setting up the socket}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00124             \textcolor{keyword}{final} Socket socket = \textcolor{keyword}{new} Socket(\textcolor{stringliteral}{"{}localhost"{}}, 4444);}
+\DoxyCodeLine{00125             primaryStage.setOnCloseRequest(\textcolor{keyword}{new} EventHandler<WindowEvent>()\{}
+\DoxyCodeLine{00126                 @Override}
+\DoxyCodeLine{00127                 \textcolor{keyword}{public} \textcolor{keywordtype}{void} handle(WindowEvent we) \{}
+\DoxyCodeLine{00128                     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00129                         IO.out.writeObject(\textcolor{stringliteral}{"{}quit"{}});}
+\DoxyCodeLine{00130                         socket.close();}
+\DoxyCodeLine{00131                     \} \textcolor{keywordflow}{catch} (IOException ioe) \{}
+\DoxyCodeLine{00132                         System.out.println(\textcolor{stringliteral}{"{}Socket can't be closed"{}});}
+\DoxyCodeLine{00133                         ioe.printStackTrace();}
+\DoxyCodeLine{00134                     \}}
+\DoxyCodeLine{00135                 \}}
+\DoxyCodeLine{00136             \});}
+\DoxyCodeLine{00137             IO.out = \textcolor{keyword}{new} ObjectOutputStream(socket.getOutputStream());}
+\DoxyCodeLine{00138             IO.in = \textcolor{keyword}{new} ObjectInputStream(socket.getInputStream());}
+\DoxyCodeLine{00139             IO.out.writeObject(tree.getType());}
+\DoxyCodeLine{00140         \} \textcolor{keywordflow}{catch} (UnknownHostException uhe) \{}
+\DoxyCodeLine{00141             System.out.println(\textcolor{stringliteral}{"{}Server not found!"{}});}
+\DoxyCodeLine{00142             System.exit(0);}
+\DoxyCodeLine{00143         \} \textcolor{keywordflow}{catch} (IOException ioe) \{}
+\DoxyCodeLine{00144             System.out.println(\textcolor{stringliteral}{"{}Can't connect to the server!"{}});}
+\DoxyCodeLine{00145             System.exit(0);}
+\DoxyCodeLine{00146         \}}
+\DoxyCodeLine{00147         }
+\DoxyCodeLine{00148         \textcolor{comment}{// exchanging information with the server}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150         confirm.setOnAction(\textcolor{keyword}{new} EventHandler<ActionEvent>() \{}
+\DoxyCodeLine{00151             @Override}
+\DoxyCodeLine{00152             \textcolor{keyword}{public} \textcolor{keywordtype}{void} handle(ActionEvent ae) \{}
+\DoxyCodeLine{00153                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{00154                     }
+\DoxyCodeLine{00155                     \textcolor{comment}{// output to the server}}
+\DoxyCodeLine{00156 }
+\DoxyCodeLine{00157                     String text = action.getValue() + \textcolor{stringliteral}{"{} "{}} + argument.getText();}
+\DoxyCodeLine{00158                     \textcolor{comment}{//System.out.println(text);}}
+\DoxyCodeLine{00159                     IO.out.writeObject(text);}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161                     \textcolor{comment}{// reading from the server }}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163                     text = (String) IO.in.readObject();}
+\DoxyCodeLine{00164                     BinaryTree tree = (BinaryTree) IO.in.readObject();}
+\DoxyCodeLine{00165                     output.setText(text);}
+\DoxyCodeLine{00166                     background.getChildren().clear();}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168                     \textcolor{comment}{// drawing the received tree}}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170                     \textcolor{keywordflow}{if} (tree.getRoot() != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{00171                         \mbox{\hyperlink{classTreeClient_a94b199e7a5de5bc092099822b4220f55}{drawTree}}((\textcolor{keywordtype}{int}) (primaryStage.getWidth() / 2), 0, (\textcolor{keywordtype}{int}) (primaryStage.getWidth() / 2), 30, tree.getRoot(), background, 1);}
+\DoxyCodeLine{00172                     \}}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174                     \textcolor{comment}{// output reset}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176                     IO.out.reset();}
+\DoxyCodeLine{00177                 \} \textcolor{keywordflow}{catch} (IOException ioe) \{}
+\DoxyCodeLine{00178                     ioe.printStackTrace();}
+\DoxyCodeLine{00179                 \} \textcolor{keywordflow}{catch} (ClassNotFoundException cnfe) \{}
+\DoxyCodeLine{00180                     cnfe.printStackTrace();}
+\DoxyCodeLine{00181                 \}}
+\DoxyCodeLine{00182             \}}
+\DoxyCodeLine{00183         \});}
+\DoxyCodeLine{00184     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTreeClient_aec2d3159d9091bb0e0d3f5d6d5b6776f}\label{classTreeClient_aec2d3159d9091bb0e0d3f5d6d5b6776f}} 
+\index{TreeClient@{TreeClient}!start@{start}}
+\index{start@{start}!TreeClient@{TreeClient}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Tree\+Client.\+start (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage }\end{DoxyParamCaption})}
+
+Main Java\+FX method 
+
+Definition at line \mbox{\hyperlink{TreeClient_8java_source_l00187}{187}} of file \mbox{\hyperlink{TreeClient_8java_source}{Tree\+Client.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187                                           \{}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189         \textcolor{comment}{// type choice window}}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191         Label l = \textcolor{keyword}{new} Label(\textcolor{stringliteral}{"{}Choose the type of the tree and press 'OK'"{}});}
+\DoxyCodeLine{00192         ChoiceBox<String> cb = \textcolor{keyword}{new} ChoiceBox<String>();}
+\DoxyCodeLine{00193         cb.getItems().addAll(\textcolor{stringliteral}{"{}Integer"{}}, \textcolor{stringliteral}{"{}Double"{}}, \textcolor{stringliteral}{"{}String"{}});}
+\DoxyCodeLine{00194         cb.setValue(\textcolor{stringliteral}{"{}Integer"{}});}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196         \textcolor{comment}{// confirming the type choice}}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198         Button b = \textcolor{keyword}{new} Button(\textcolor{stringliteral}{"{}OK"{}});}
+\DoxyCodeLine{00199         b.setOnAction(\textcolor{keyword}{new} EventHandler<ActionEvent>() \{}
+\DoxyCodeLine{00200             @Override}
+\DoxyCodeLine{00201             \textcolor{keyword}{public} \textcolor{keywordtype}{void} handle(ActionEvent ae) \{}
+\DoxyCodeLine{00202                 StringWrap.type = cb.getValue();}
+\DoxyCodeLine{00203                 \mbox{\hyperlink{classTreeClient_af5c7bde529e61d7e2367cdd35530ac98}{runTree}}(primaryStage);}
+\DoxyCodeLine{00204             \}}
+\DoxyCodeLine{00205         \});}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207         \textcolor{comment}{// layout for the choice window}}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209         VBox vb = \textcolor{keyword}{new} VBox();}
+\DoxyCodeLine{00210         vb.setAlignment(Pos.CENTER);}
+\DoxyCodeLine{00211         vb.getChildren().addAll(l, cb, b);}
+\DoxyCodeLine{00212         vb.setSpacing(15);}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214         \textcolor{comment}{// setting the stage}}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216         primaryStage.setScene(\textcolor{keyword}{new} Scene(vb, 400, 320));}
+\DoxyCodeLine{00217         primaryStage.show();}
+\DoxyCodeLine{00218     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TreeClient_8java}{Tree\+Client.\+java}}\end{DoxyCompactItemize}

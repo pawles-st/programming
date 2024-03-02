@@ -1,0 +1,72 @@
+\hypertarget{classDynamicTriangle_1_1TriangleScrolledEventHandler}{}\doxysection{Dynamic\+Triangle.\+Triangle\+Scrolled\+Event\+Handler Class Reference}
+\label{classDynamicTriangle_1_1TriangleScrolledEventHandler}\index{DynamicTriangle.TriangleScrolledEventHandler@{DynamicTriangle.TriangleScrolledEventHandler}}
+Inheritance diagram for Dynamic\+Triangle.\+Triangle\+Scrolled\+Event\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDynamicTriangle_1_1TriangleScrolledEventHandler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicTriangle_1_1TriangleScrolledEventHandler_a008c27a2474da9ea8240443b03f71909}{handle}} (Scroll\+Event se)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that deals with the scrolling on the triangle 
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00092}{92}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicTriangle_1_1TriangleScrolledEventHandler_a008c27a2474da9ea8240443b03f71909}\label{classDynamicTriangle_1_1TriangleScrolledEventHandler_a008c27a2474da9ea8240443b03f71909}} 
+\index{DynamicTriangle.TriangleScrolledEventHandler@{DynamicTriangle.TriangleScrolledEventHandler}!handle@{handle}}
+\index{handle@{handle}!DynamicTriangle.TriangleScrolledEventHandler@{DynamicTriangle.TriangleScrolledEventHandler}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily void Dynamic\+Triangle.\+Triangle\+Scrolled\+Event\+Handler.\+handle (\begin{DoxyParamCaption}\item[{Scroll\+Event}]{se }\end{DoxyParamCaption})}
+
+Method that deals with the scrolling event 
+\begin{DoxyParams}{Parameters}
+{\em se} & Event that caused the scrolling event \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DynamicTriangle_8java_source_l00097}{97}} of file \mbox{\hyperlink{DynamicTriangle_8java_source}{Dynamic\+Triangle.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097                                            \{}
+\DoxyCodeLine{00098             Scale s = \textcolor{keyword}{new} Scale();}
+\DoxyCodeLine{00099             \textcolor{keywordflow}{if} (se.getDeltaY() > 0) \{}
+\DoxyCodeLine{00100                 s.setX(se.getDeltaY() * 0.03);}
+\DoxyCodeLine{00101                 s.setY(se.getDeltaY() * 0.03);}
+\DoxyCodeLine{00102             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (se.getDeltaY() < 0) \{}
+\DoxyCodeLine{00103                 s.setX(-\/1 / (se.getDeltaY() * 0.03));}
+\DoxyCodeLine{00104                 s.setY(-\/1 / (se.getDeltaY() * 0.03));}
+\DoxyCodeLine{00105             \}}
+\DoxyCodeLine{00106             ObservableList<Double> points = getPoints();}
+\DoxyCodeLine{00107             \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{00108             \textcolor{keywordtype}{double} sumX = 0;}
+\DoxyCodeLine{00109             \textcolor{keywordtype}{double} sumY = 0;}
+\DoxyCodeLine{00110             \textcolor{keywordflow}{for} (Double p : points) \{}
+\DoxyCodeLine{00111                 \textcolor{keywordflow}{if} (i \% 2 == 0) \{}
+\DoxyCodeLine{00112                     sumX += p;}
+\DoxyCodeLine{00113                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00114                     sumY += p;}
+\DoxyCodeLine{00115                 \}}
+\DoxyCodeLine{00116                 ++i;}
+\DoxyCodeLine{00117             \}}
+\DoxyCodeLine{00118             s.setPivotX(sumX/3);}
+\DoxyCodeLine{00119             s.setPivotY(sumY/3);}
+\DoxyCodeLine{00120             getTransforms().add(s);}
+\DoxyCodeLine{00121         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DynamicTriangle_8java}{Dynamic\+Triangle.\+java}}\end{DoxyCompactItemize}

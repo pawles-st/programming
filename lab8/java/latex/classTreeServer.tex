@@ -1,0 +1,62 @@
+\hypertarget{classTreeServer}{}\doxysection{Tree\+Server Class Reference}
+\label{classTreeServer}\index{TreeServer@{TreeServer}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classTreeServer_ab504f226df71192140c719be873f61bf}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main server class \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Paweł Leśniak 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{TreeServer_8java_source_l00167}{167}} of file \mbox{\hyperlink{TreeServer_8java_source}{Tree\+Server.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTreeServer_ab504f226df71192140c719be873f61bf}\label{classTreeServer_ab504f226df71192140c719be873f61bf}} 
+\index{TreeServer@{TreeServer}!main@{main}}
+\index{main@{main}!TreeServer@{TreeServer}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Tree\+Server.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+The Main method for the server 
+\begin{DoxyParams}{Parameters}
+{\em args} & the entry arguments (unused) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TreeServer_8java_source_l00171}{171}} of file \mbox{\hyperlink{TreeServer_8java_source}{Tree\+Server.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171                                            \{}
+\DoxyCodeLine{00172         }
+\DoxyCodeLine{00173         \textcolor{comment}{// accepting the client and creating a thread}}
+\DoxyCodeLine{00174 }
+\DoxyCodeLine{00175         \textcolor{keywordflow}{try} (ServerSocket serverSocket = \textcolor{keyword}{new} ServerSocket(4444)) \{}
+\DoxyCodeLine{00176             System.out.println(\textcolor{stringliteral}{"{}Server is listening on port 4444"{}});}
+\DoxyCodeLine{00177             \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00178                 Socket socket = serverSocket.accept();}
+\DoxyCodeLine{00179                 System.out.println(\textcolor{stringliteral}{"{}new client connected"{}});}
+\DoxyCodeLine{00180                 \textcolor{keyword}{new} \mbox{\hyperlink{classMultiThread}{MultiThread}}(socket).start();}
+\DoxyCodeLine{00181             \}}
+\DoxyCodeLine{00182         \} \textcolor{keywordflow}{catch} (IOException ioe) \{}
+\DoxyCodeLine{00183             System.out.println(\textcolor{stringliteral}{"{}I/O Exception!"{}});}
+\DoxyCodeLine{00184         \}}
+\DoxyCodeLine{00185     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TreeServer_8java}{Tree\+Server.\+java}}\end{DoxyCompactItemize}
